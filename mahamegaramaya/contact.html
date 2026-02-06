@@ -64,17 +64,11 @@
     <span class="value" id="contact-email"></span>
   </p>
 
-  <p class="contact-row">
-    <span class="label en">Telephone:</span>
-    <span class="label si">දුරකථන:</span>
-    <span class="value" id="contact-telephone"></span>
-  </p>
-
-  <p class="contact-row">
-    <span class="label en">Fax:</span>
-    <span class="label si">ෆැක්ස්:</span>
-    <span class="value" id="contact-fax"></span>
-  </p>
+<p class="contact-row">
+  <span class="label en">Telephone:</span>
+  <span class="label si">දුරකථන:</span>
+  <a class="value" id="contact-telephone" href=""></a>
+</p>
 
   <p class="contact-row">
     <span class="label en">Website:</span>
@@ -82,8 +76,14 @@
     <span class="value" id="contact-website"></span>
   </p>
 </div>
-
 </div>
+<script>
+  const phone = "0773434541";   // your number
+  const el = document.getElementById("contact-telephone");
+
+  el.textContent = phone;
+  el.href = "tel:" + phone;
+</script>
 
 
 <script>
