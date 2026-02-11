@@ -1,0 +1,431 @@
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+  --top-band-h: 60px; /* adjust for top-band height */
+}
+
+/* ===== HTML & BODY ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: black;
+  height: 100%;
+}
+
+body {
+  background-image: url("white.jpg");
+  padding-top: var(--top-band-h); /* push content below fixed top band */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== SAFE BOTTOM AREA ===== */
+.safe-bottom {
+  height: env(safe-area-inset-bottom);
+  background: #000;
+}
+
+/* ===== TOP FIXED BAND ===== */
+.top-band {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--top-band-h);
+  background: black;
+  display: grid;
+  place-items: center;
+  line-height: var(--top-band-h);
+  z-index: 9999;
+}
+
+.top-band-text {
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.top-icon {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.top-mail, .top-tele {
+  color: white;
+  font-size: 30px;
+}
+
+.top-icon:active {
+  opacity: 0.6;
+}
+main.content {
+  flex: 1;
+}
+.content {
+  margin-top: calc(var(--top-band-h) - 60px); 
+  padding: 0;
+  background: black;
+}               
+
+/* ===== SUB-BAND ===== */
+.sub-band {
+  width: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;     /* reduced top spacing */
+  padding-bottom: 20px; /* keep bottom spacing */
+  box-sizing: border-box;
+}
+
+.sub-band-icon {
+  width: 60px;
+  height: auto;
+  margin-top:  0; /* reduced icon top spacing */
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.sub-band-text {
+  color: white;
+  text-align: center;
+  max-width: 90%;
+  height: auto;
+  line-height: 1.8em;
+  padding-bottom: 5px;
+  overflow: hidden;
+  word-break: keep-all;
+}
+.si-text {
+  margin-bottom: 17px;   /* space after Sinhala */
+}
+.temple-si {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.25;
+  color: yellow;
+}
+
+.temple-en {
+  margin: 2px 0 0 0;   /* space between languages */
+  font-size: 18px;
+  color: yellow;
+}
+.temple-si,
+.temple-en {
+  position: relative;
+  padding-left: 14px;   /* space for dot */
+}
+
+.page-2 .sub-band-text .si-text {
+  font-size: 22px;      /* adjust as needed */
+  line-height: 1.4;    /* font height control */
+    position: relative;
+
+}
+.page-2 .sub-band-text .en-text1 {
+  font-size: 22px;      /* adjust as needed */
+  line-height: 1.4;    /* font height control */
+}
+/* Page 2 – remove dots from h2 */
+.page-2 .title-box1 h2::before {
+  content: none;
+}
+.page-2 .title-box1 {
+  position: relative;
+  padding-left: 28px;   /* space for single dot */
+}
+
+.page-2 .title-box1::before {
+  content: "●";
+  position: absolute;
+  left: 10px;
+  top: 14px;            /* aligns with Sinhala line */
+  font-size: 28px;
+  color: blue;
+}
+.page-2 .title-box1 h2 {
+  margin: 2px 0;
+  line-height: 24px;
+}
+
+.page-2 .title-box1 h2 + h2 {
+  margin-top: 0;
+}
+/* Page 2 only */
+.page-2 .title-box2 {
+  position: relative;
+  padding-left: 24px;   /* space for the dot */
+}
+
+/* Single dot for each temple box */
+.page-2 .title-box2::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  top: 4px;             /* aligns vertically with Sinhala line */
+  font-size: 20px;      /* adjust dot size as needed */
+  color: blue;
+}
+
+
+
+
+.en-text {
+  margin-top: 14px;   /* space between languages */
+  font-size: 10px;    /* optional: slightly smaller */
+  opacity: 0.9;       /* optional: softer look */
+    line-height: 3.3em; 
+}
+/* Page 2 – new adjustment */
+.en-text1 {
+  font-size: 18px;        /* example change */
+  text-align: center;       /* example change */
+  line-height: 1.1;
+  margin-top: 20px;
+}
+
+.sub-band-text p {
+  margin-bottom: 15px;
+  font-size: 26px;
+  
+  
+}
+.sub-band-text1 p {
+	  line-height: 1;
+	  text-align: center;       /* example change */
+  margin-bottom:  5px;
+  font-size: 21px;
+  color: white;
+}
+.sub-band-text1 p + p {
+  margin-top: 1px;
+}
+
+.sub-band-text p:first-child {
+  margin-top: 4px;     /* fine-tuned top */
+  margin-bottom: 7px;  /* space between lines */
+}
+
+  /* ===== TOP DESCRIPTION SECTION ===== */
+
+/* Container stays simple */
+.container {
+    background: #ffffff;
+ padding-bottom: 10px;   /* 🔑 ONE padding only */
+    text-align: left;
+}
+
+	
+
+.box {
+  background: black;
+  padding:  8px 0;
+  margin-bottom: 0;   /* 🔑 this removes black lines */
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* 🔑 left align children */
+    gap: 4px;
+    width: 100%;
+    padding-left:  0;
+}
+/* District names as plain links */
+.district {
+    display: inline-block;
+  width: 100%;
+    justify-content: flex-start;
+    padding-left:  0;
+    text-align: left;    
+    color: #0b5ed7;            /* blue link color */
+    font-size: 1.1rem;
+    text-decoration: none;     /* remove underline (optional) */
+    cursor: pointer;
+}
+
+/* Hover effect (soft, elder-friendly) */
+.district:hover {
+    text-decoration: underline;
+    color: #084298;
+}
+
+        /* ===== FOOTER ===== */
+footer {
+    background: #000;
+  padding: 12px 10px;
+    width: 100%;
+ margin-top: auto;
+ 
+    display: flex;
+    justify-content: center;   /* 🔑 horizontal center */
+}
+
+.footer-content {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;               /* 🔑 allow full width */
+}
+
+
+/* ===== BACK BUTTON ===== */
+
+.back-button:hover {
+    background: #ffcc99;
+    transform: scale(1.05);
+}
+
+/* ===== DISTRICT DOT ICON ===== */
+.district {
+    display: flex;              /* align dot and text inline */
+    align-items: center;        /* vertical align */
+    gap: 8px;                   /* space between dot and text */
+    font-size: 1.2rem;
+    color: #0b5ed7;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 0;             /* vertical spacing only */
+}
+
+/* add dot inline */
+.district::before {
+    content: "●";               /* simple dot */
+    font-size: 1.2rem;
+    color: #0b5ed7;
+}
+
+/* hover feedback */
+.district:hover::before {
+    background: #084298;
+}
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 700px) {
+
+  .title-box {
+                margin-top: 35px;
+			                   width: 90%;
+            }
+			.title-box1:hover {
+  opacity: 0.8;
+}
+.title-link {
+  text-decoration: none;   /* remove underline */
+  
+}
+  
+.title-box1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+  .title-box h1 {
+                font-size: 22px;
+
+                white-space: nowrap;
+                            }
+							
+.title-box1 {
+    width: 95%;
+    margin-top: 10px;
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 28px;
+   background: black; 
+   position: relative;  /* needed for ::before */
+
+}
+
+.title-box1::before {
+  content: "●";
+  position: absolute;
+  left: 10px;
+  top: 14px;            /* aligns with first (Sinhala) line */
+  font-size: 28px;
+  color: blue;
+}
+.title-box1 h2 {
+  font-size: 20px;
+  line-height: 24px;
+  color: yellow;
+  margin: 2px 0;
+  font-weight: 300;
+}
+
+.title-box1 h2 + h2 {
+  margin-top: 0;
+}
+  
+.title-box2 h2 {
+  font-family: "Noto Serif Sinhala", "Noto Sans Sinhala", sans-serif;
+  font-size: 18px;     
+  line-height: 26px;   /* ↑ increase spacing between lines */
+  font-weight: 500;
+  color: #0b5ed7;
+  margin: 0;
+  padding-left: 18px;  
+  position: relative;
+}
+
+/* dot for temple titles */
+.title-box2 h2::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0b5ed7;
+}
+
+
+          
+  .container {
+    width: 90%;
+    display: block;
+    margin-top:  0;
+    margin-bottom: 15px;
+  }
+
+
+  .district {
+    margin: 0 !important;
+  }
+
+ .grid {
+
+    display: grid !important;
+    grid-template-columns: 1fr;
+    justify-items: start !important;
+    padding-left: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .district {
+    display: flex;
+    text-align: left;
+    width: 100%;
+    font-size: 24px;
+    padding: 4px  0 4px  10px;
+    height: auto;
+  }  
+  .district:hover {
+              box-shadow: 0 5px 16px #777;           
+            }
+
+    .back-button {
+       display: none;
+    }
+
+    .footer-content {
+        font-size: 14px;
+	  text-align: center;   /* 🔑 this centers the text */
+    }
+}

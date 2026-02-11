@@ -7,7 +7,7 @@
 <title>Temple Page</title>
 <meta name="description" id="metaDescription" content="">
 
-<link rel="stylesheet" href="new-style.css">
+<link rel="stylesheet" href="../provinces/new-style.css">
 
 </head>
 <body>
@@ -29,7 +29,7 @@
     <!-- full-width sub-band inside content -->
 <div class="sub-band">
   <!-- icon centered on top -->
-  <img src="1.png" class="sub-band-icon" alt="Icon">
+  <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 
   <!-- Sinhala text below icon -->
   <div class="sub-band-text">
@@ -78,11 +78,22 @@
 </div>
 </div>
 <script>
-  const phone = "0773434541";   // your number
-  const el = document.getElementById("contact-telephone");
+fetch("info.txt")
+  .then(response => response.text())
+  .then(data => {
+    const lines = data.split("\n");
 
-  el.textContent = phone;
-  el.href = "tel:" + phone;
+    lines.forEach(line => {
+      if (line.startsWith("telephone=")) {
+        const phone = line.replace("telephone=", "").trim();
+
+        const el = document.getElementById("contact-telephone");
+        el.textContent = phone;
+        el.href = "tel:" + phone.replace(/\s+/g, "");
+      }
+    });
+  })
+  .catch(err => console.error("Info file error:", err));
 </script>
 
 
@@ -163,5 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
         දත්ත: ධනේශ් රණසිංහ
     </div>
 </footer>
+
 
 

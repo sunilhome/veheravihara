@@ -7,7 +7,7 @@
 <title>Temple Page</title>
 <meta name="description" id="metaDescription" content="">
 
-<link rel="stylesheet" href="new-style.css">
+<link rel="stylesheet" href="../provinces/new-style.css">
 
 </head>
 <body>
@@ -24,12 +24,16 @@
   <div class="content">
   
     <div class="sub-band">
-      <img src="1.png" class="sub-band-icon" alt="Icon">
+      <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 	  
       <div class="sub-band-text">
         <p>මහමේඝාරාම විහාරය</p>
         <p>මහරගම</p>
       </div>
+	        <div class="sub-band-text1">
+        <p>Mahamegaramaya Maharagama</p>
+  </div>
+		
     </div>
 
   <div class="slideshow">
@@ -44,13 +48,10 @@
         <p id="abbot-info"></p>
         <p class="event-note"></p>
       </div>
-    </div>
-  </div>
-  <div class="image-bottom-bar"></div>
 
-  <div class="nav-buttons">
-    <button class="nav-btn" id="prevBtn">◀ Previous</button>
-    <button class="nav-btn" id="nextBtn">Next ▶</button>
+		
+  	  <p class="event-note1"></p>
+    </div>
   </div>
 
   <div class="text-button-box">
@@ -59,9 +60,6 @@
 <a href="contact.html" class="icon-link" data-icon="🗺️">
   සිතියම / Maps
 </a>
-    <a href="javascript:void(0)" onclick="window.open('' + temple)" class="icon-link" data-icon="▶️">
-      වීඩියෝ / Videos
-    </a>
   </div>
 
 <footer>
@@ -105,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Info loaded:", info);
         document.getElementById("abbot-info").textContent = info.abbot || "";
         document.querySelector(".event-note").textContent = info.note || "";
+  	    document.querySelector(".event-note1").textContent = info.note1 || "";
+
     })
     .catch(err => console.error("Temple info error:", err));
 });
@@ -124,3 +124,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="safe-bottom"></div>
 </body>
 </html>
+
+
+
+
+
