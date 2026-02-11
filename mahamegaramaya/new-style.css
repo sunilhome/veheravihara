@@ -289,8 +289,10 @@ body {
   color: brown;
   font-weight: bold;
   margin-top: 10px;
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
+
+
 
 /* ===== ABBOT INFO ===== */
 .info-box {
@@ -406,3 +408,4 @@ footer {
     text-align: center;
   }
 }
+
