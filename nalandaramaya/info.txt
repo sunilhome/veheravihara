@@ -1,0 +1,13 @@
+id=t-5
+si=පතිරගොඩ නාලන්දාරාමය
+en=Pathiragoda Nalandharamaya
+var=
+abbot= 
+address=නාලන්දාරාමය, 200 පතිරගොඩ පාර, මහරගම
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=පූජ්‍ය තලපත්පිටියේ පුඤ්ඤාලෝක  නාහිමිපාණන්
+note1=Venerable Thalapathpitiye Punghaloka Thero
+email=
+website=https://veheravihara.lk/
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17846.284642946932!2d79.91170281352292!3d6.8598619948640085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25080557b83bb%3A0xa879b1b710c5779c!2sNalandarama%20Viharaya!5e1!3m2!1sen!2slk!4v1771003020140!5m2!1sen!2slk

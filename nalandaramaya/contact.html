@@ -1,0 +1,182 @@
+     <!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temple Page</title>
+<meta name="description" id="metaDescription" content="">
+
+<link rel="stylesheet" href="../provinces/new-style.css">
+
+</head>
+<body>
+
+  <!-- top fixed band -->
+    <!-- top fixed band -->
+<div class="top-band">
+  <a href="javascript:history.back()" class="top-icon">&#8592;</a>
+  <a href="/index.html" class="top-icon">&#127969;</a>
+  <a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
+<a href="contact.html" class="top-icon top-mail">&#128233;</a>
+</div> 
+
+ <!-- <div class="top-band"></div>-->
+
+  <!-- content -->
+  <div class="content">
+
+    <!-- full-width sub-band inside content -->
+<div class="sub-band">
+  <!-- icon centered on top -->
+  <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+
+  <!-- Sinhala text below icon -->
+  <div class="sub-band-text">
+    <p>පතිරගොඩ නාලන්දාරාමය</p>
+    <p>පතිරගොඩ</p>
+  </div>
+     <div class="sub-band-text1">
+        <p>Nawinna Rajamaha Viharaya, Nawinna</p>
+  </div>
+</div>  
+
+<!-- CONTACT DETAILS -->
+<div class="info-box">
+  <!-- Map -->
+  <div class="contact-item">
+    <iframe id="contact-map"
+      width="100%" height="250"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+<div class="contact-info">
+
+  <p class="contact-row">
+    <span class="label en">Address:</span>
+    <span class="label si">ලිපිනය:</span>
+    <span class="value" id="contact-address"></span>
+  </p>
+
+  <p class="contact-row">
+    <span class="label en">Email:</span>
+    <span class="label si">ඊ-තැපැල්:</span>
+    <span class="value" id="contact-email"></span>
+  </p>
+
+<p class="contact-row">
+  <span class="label en">Telephone:</span>
+  <span class="label si">දුරකථන:</span>
+  <a class="value" id="contact-telephone" href=""></a>
+</p>
+
+  <p class="contact-row">
+    <span class="label en">Website:</span>
+    <span class="label si">වෙබ් අඩවිය:</span>
+    <span class="value" id="contact-website"></span>
+  </p>
+</div>
+</div>
+<script>
+fetch("info.txt")
+  .then(response => response.text())
+  .then(data => {
+    const lines = data.split("\n");
+
+    lines.forEach(line => {
+      if (line.startsWith("telephone=")) {
+        const phone = line.replace("telephone=", "").trim();
+
+        const el = document.getElementById("contact-telephone");
+        el.textContent = phone;
+        el.href = "tel:" + phone.replace(/\s+/g, "");
+      }
+    });
+  })
+  .catch(err => console.error("Info file error:", err));
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const templeID = "t-5";
+
+    fetch("info.txt")
+        .then(res => res.text())
+        .then(data => {
+
+            const info = {};
+            let reading = false;
+
+            data.split(/\r?\n/).forEach(line => {
+                line = line.trim();
+                if (!line) return;
+
+                if (line === `id=${templeID}`) {
+                    reading = true;
+                    return;
+                }
+
+                if (reading && line.startsWith("id=")) {
+                    reading = false;
+                    return;
+                }
+
+                if (reading && line.includes("=")) {
+                    const [key, ...rest] = line.split("=");
+                    info[key.trim()] = rest.join("=").trim();
+                }
+            });
+            if (info.map) {
+                document.getElementById("contact-map").src = info.map;
+            }
+
+            /* Address */
+            if (info.address) {
+                document.getElementById("contact-address").textContent = info.address;
+            }
+
+            /* Email */
+            if (info.email) {
+                document.getElementById("contact-email").innerHTML =
+                    `<a href="mailto:${info.email}">${info.email}</a>`;
+            }
+
+            /* Telephone */
+            if (info.telephone) {
+                const tel = info.telephone.replace(/\s+/g, "");
+                document.getElementById("contact-telephone").innerHTML =
+                    `<a href="tel:${tel}">${info.telephone}</a>`;
+            }
+
+            /* Fax */
+            if (info.fax) {
+                document.getElementById("contact-fax").textContent = info.fax;
+            }
+
+            /* Website */
+            if (info.website) {
+                document.getElementById("contact-website").innerHTML =
+                    `<a href="${info.website}" target="_blank">${info.website}</a>`;
+            }
+
+        })
+        .catch(err => console.error("Contact load error:", err));
+});
+</script>
+
+<footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+</footer>
+
+
+
