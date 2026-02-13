@@ -1,0 +1,15 @@
+id=t-4
+si=නැගෙනහිර ඇරැව්වල සිරිවිජය සිරිවර්ධනාරාමය
+en=Erewwala Siri Vijaya Siriwardhanaramaya
+var=mahamegaramaya
+abbot=
+address=නැගෙනහිර ඇරැව්වල සිරිවිජය සිරිවර්ධනාරාමය, ඇරැව්වල, පන්නිපිටිය 
+telephone=+94 714253904
+   0766932965
+   0112 844515 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=පූජ්‍ය සේනපුර නන්දරතන ස්වාමීන් වහන්සේ
+note1=Venerable Senapua Nandharathana Thero.
+email=
+website=https://veheravihara.lk/
+map=
