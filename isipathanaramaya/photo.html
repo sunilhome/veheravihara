@@ -1,0 +1,102 @@
+     <!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temple Page</title>
+<meta name="description" id="metaDescription" content="">
+
+<link rel="stylesheet" href="new-style.css">
+
+</head>
+
+<body>
+
+  <!-- top fixed band -->
+    <!-- top fixed band -->
+<div class="top-band">
+  <a href="javascript:history.back()" class="top-icon">&#8592;</a>
+  <a href="/index.html" class="top-icon">&#127969;</a>
+  <a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
+<a href="contact.html" class="top-icon top-mail">&#128233;</a>
+</div> 
+
+ <!-- <div class="top-band"></div>-->
+
+  <!-- content -->
+  <div class="content1">
+
+    <!-- full-width sub-band inside content -->
+<div class="sub-band">
+  <!-- icon centered on top -->
+  <img src="1.png" class="sub-band-icon" alt="Icon">
+
+  <!-- Sinhala text below icon -->
+  <div class="sub-band-text">
+    <p>ඉසිපතනාරමය</p>
+    <p>නාවින්න මහරගම</p>
+  </div>
+         <div class="sub-band-text1">
+        <p>Isipathanaramaya, Maharagama</p>
+  </div>
+
+
+</div>  
+
+
+<img src="1.webp" class="main-image" alt="Buddhist Temple">
+  <img src="2.webp" class="main-image" alt="Buddhist Temple">
+  <img src="3.webp" class="main-image" alt="Buddhist Temple">
+<img src="4.webp" class="main-image" alt="Buddhist Temple">
+  <img src="5.webp" class="main-image" alt="Buddhist Temple">
+  <img src="6.webp" class="main-image" alt="Buddhist Temple">
+  <img src="7.webp" class="main-image" alt="Buddhist Temple">
+ <img src="8.webp" class="main-image" alt="Buddhist Temple">
+  <img src="9.webp" class="main-image" alt="Buddhist Temple">
+  <img src="10.webp" class="main-image" alt="Buddhist Temple">
+  <img src="11.webp" class="main-image" alt="Buddhist Temple">
+  <img src="12.webp" class="main-image" alt="Buddhist Temple">
+
+<footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+</footer>
+
+
+<script>
+let templeID = "t-1";
+    fetch("info.txt")
+    .then(response => response.text())
+    .then(data => {
+        let lines = data.split("\n");
+        let startIndex = lines.findIndex(line => line.trim() === `id=${templeID}`);
+        if (startIndex === -1) return;
+
+        let templeData = {};
+
+        for (let i = startIndex + 1; i < lines.length; i++) {
+            let line = lines[i].trim();
+            if (line.startsWith("id=")) break;
+
+            let parts = line.split("=");
+            if (parts.length >= 2) {
+                let key = parts[0].trim();
+                let value = parts.slice(1).join("=").trim();
+                templeData[key] = value;
+            }
+        }
+  // Set page title
+        document.title = templeData["si"] || templeData["en"] || "Temple Page";
+        document.getElementById("title-si").textContent = templeData["si"] || "";
+        document.getElementById("title-en").textContent = templeData["en"] || "";
+    })
+    .catch(err => console.error("Error loading temple info:", err));
+</script>
+</body>
+
+</html>
