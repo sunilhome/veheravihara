@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  background-image: url("white.jpg");
+/*  background-image: url("white.jpg");*/
   padding-top: var(--top-band-h); /* push content below fixed top band */
   display: flex;
   flex-direction: column;
@@ -431,4 +431,5 @@ footer {
     }
 
 }
+
 
