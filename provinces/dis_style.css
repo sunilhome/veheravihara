@@ -225,7 +225,7 @@ main.content {
 .box {
   background: black;
   padding:  8px 0;
-  margin-bottom: 0;   /* 🔑 this removes black lines */
+  margin-bottom: 15px;   /* 🔑 this removes black lines */
 }
 .grid {
     display: flex;
@@ -428,4 +428,5 @@ footer {
         font-size: 14px;
 	  text-align: center;   /* 🔑 this centers the text */
     }
+
 }
