@@ -1,0 +1,12 @@
+id=t-6
+si=ශ්‍රී විජයාරාම රාජමහා විහාරය
+en=Sri Vijayarama Rajamaha Viharaya
+abbot=
+address=ශ්‍රී විජයාරාම රාජමහා විහාරය, ගංගොඩවිල නුගේගොඩ
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=පූජ්‍ය 
+note1=Venerable Senapua Nandharathana Thero.
+email=
+website=https://veheravihara.lk/
+map=
