@@ -78,24 +78,6 @@
   </p>
 </div>
 </div>
-<script>
-fetch("info.txt")
-  .then(response => response.text())
-  .then(data => {
-    const lines = data.split("\n");
-
-    lines.forEach(line => {
-      if (line.startsWith("telephone=")) {
-        const phone = line.replace("telephone=", "").trim();
-
-        const el = document.getElementById("contact-telephone");
-        el.textContent = phone;
-        el.href = "tel:" + phone.replace(/\s+/g, "");
-      }
-    });
-  })
-  .catch(err => console.error("Info file error:", err));
-</script>
 
 
 <script>
@@ -147,15 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
             /* Telephone */
             if (info.telephone) {
                 const tel = info.telephone.replace(/\s+/g, "");
-                document.getElementById("contact-telephone").innerHTML =
-                    `<a href="tel:${tel}">${info.telephone}</a>`;
+              const telEl = document.getElementById("contact-telephone");
+telEl.textContent = info.telephone;
+telEl.href = "tel:" + tel;
+
             }
 
             /* Fax */
-            if (info.fax) {
-                document.getElementById("contact-fax").textContent = info.fax;
-            }
-
             /* Website */
             if (info.website) {
                 document.getElementById("contact-website").innerHTML =
