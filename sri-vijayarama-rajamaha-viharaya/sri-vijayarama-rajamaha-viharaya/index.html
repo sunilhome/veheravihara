@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temple Page</title>
+<meta name="description" id="metaDescription" content="">
+
+<link rel="stylesheet" href="../provinces/new-style.css">
+
+</head>
+<body>
+
+  <!-- Top fixed band -->
+  <div class="top-band">
+    <a href="javascript:history.back()" class="top-icon">&#8592;</a>
+    <a href="/index.html" class="top-icon">&#127969;</a>
+    <a href="tel:+94766178102" class="top-icon">&#128222;</a>
+    <a href="contact.html" class="top-icon">&#128233;</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+  
+    <div class="sub-band">
+      <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+	  
+      <div class="sub-band-text">
+        <p>ශ්‍රී විජයාරාම රාජමහා විහාරය </p>
+        <p>ගංගොඩවිල නුගේගොඩ</p>
+      </div>
+	        <div class="sub-band-text1">
+        <p>Sri Vijayarama Rajamaha Viharaya. Gangodawila.</p>
+      </div>
+
+	  
+	  
+	  
+    </div>
+
+  <div class="slideshow">
+    <img id="slideImg" src="a.webp" alt="Slideshow">
+  </div>
+  
+    <img src="x.webp" class="small-image" alt="Buddhist Temple">
+
+    <div class="event-box">
+      <div class="event-text">
+        <h2>විහාරාධිපති</h2>
+        <p id="abbot-info"></p>
+        <p class="event-note"></p>
+      </div>
+	          <p class="event-note1"></p>
+
+    </div>
+  </div>
+
+
+  <div class="text-button-box">
+    <a href="history.html" class="icon-link" data-icon="📄">තොරතුරු / Information</a>
+    <a href="photo.html" class="icon-link" data-icon="📷">ඡායාරූප / Photos</a>
+<a href="contact.html" class="icon-link" data-icon="🗺️">
+  සිතියම / Maps
+</a>
+  </div>
+
+<footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const templeID = "t-6";
+
+    fetch("info.txt")
+    .then(res => res.text())
+    .then(data => {
+        const info = {};
+        let reading = false;
+
+        data.split("\n").forEach(line => {
+            line = line.trim();
+            if (!line) return;
+
+            if (line === `id=${templeID}`) {
+                reading = true;
+                return;
+            } 
+
+            if (reading && line.startsWith("id=")) {
+                reading = false;
+                return;
+            }
+
+            if (reading && line.includes("=")) {
+                const [key, ...rest] = line.split("=");
+                info[key.trim()] = rest.join("=").trim();
+            }
+        });
+        console.log("Info loaded:", info);
+        document.getElementById("abbot-info").textContent = info.abbot || "";
+        document.querySelector(".event-note").textContent = info.note || "";
+		document.querySelector(".event-note1").textContent = info.note1 || "";
+		
+    })
+    .catch(err => console.error("Temple info error:", err));
+});
+</script>
+<script>
+  const images = ["a.webp", "b.webp", "c.webp"];
+  let index = 0;
+  const img = document.getElementById("slideImg");
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }, 3000);
+</script>
+
+
+<div class="safe-bottom"></div>
+</body>
+</html>

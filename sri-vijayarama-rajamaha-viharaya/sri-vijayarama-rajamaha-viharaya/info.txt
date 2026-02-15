@@ -1,0 +1,12 @@
+id=t-6
+si=ශ්‍රී විජයාරාම රාජමහා විහාරය
+en=Sri Vijayarama Rajamaha Viharaya
+abbot=
+address=ශ්‍රී විජයාරාම රාජමහා විහාරය, ගංගොඩවිල නුගේගොඩ
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=පූජ්‍ය සද්ධර්ම කීර්ති ශ්‍රී අමුණුමුල්ලේ ජිණරතන ස්වාමීන් වහන්සේ 
+note1=Venerable Amunumulle Jinarathana Thero.
+email=
+website=https://veheravihara.lk/
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17846.33872726129!2d79.90033591352282!3d6.8584184949511355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a7d748d0ca5%3A0x65adde939d394d17!2sSri%20Wijayarama%20Raja%20Maha%20Viharaya!5e1!3m2!1sen!2slk!4v1771154434485!5m2!1sen!2slk
