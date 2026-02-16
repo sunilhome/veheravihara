@@ -81,7 +81,7 @@ body {
   width: 60px;
   height: auto;
   margin-top:  0; /* reduced icon top spacing */
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   flex-shrink: 0;
 }
 
