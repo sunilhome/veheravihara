@@ -91,7 +91,7 @@ body {
   max-width: 100%;
   height: auto;
   line-height: 1.4em;
-  padding-top: 45px;
+  padding-top: 15px;
   padding-bottom: 5px;
   overflow: hidden;
   word-break: keep-all;
@@ -424,5 +424,6 @@ footer {
     text-align: center;
   }
 }
+
 
 
