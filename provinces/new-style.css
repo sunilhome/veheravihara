@@ -81,7 +81,7 @@ body {
   width: 60px;
   height: auto;
   margin-top:  0; /* reduced icon top spacing */
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   flex-shrink: 0;
 }
 
@@ -422,5 +422,6 @@ footer {
     text-align: center;
   }
 }
+
 
 
