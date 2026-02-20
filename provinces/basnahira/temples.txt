@@ -5,7 +5,8 @@ siri-vijayasiriwardhanaramaya|නැගෙනහිර ඇරැව්වල ස
 nalandaramaya|නාලන්දාරාමය|Nalandharamaya
 sri-vijayarama-rajamaha-viharaya|ශ්‍රී විජයාරාම රාජමහා විහාරය|Sri Vijayarama Rajamaha Viharaya
 paramadharma|dddd|hhhh
-Attidiya Maligawatta Maha Viharaya|ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය|Attidiya Maligawatta Ancient Maha Viharaya
+attidiya maligawatta maha viharaya|ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය|Attidiya Maligawatta Ancient Maha Viharaya
+
 
 
 
