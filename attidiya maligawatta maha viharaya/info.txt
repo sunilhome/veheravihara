@@ -1,0 +1,12 @@
+id=t-7
+si=ඓතිහාසික අත්තිඩිය  මාලිගාවත්ත පුරාණ මහා විහාරය
+en=The Historic Attidiya Maligawatta Ancient Maha Viharaya
+abbot=ඓතිහාසික අත්තිඩිය  මාලිගාවත්ත පුරාණ මහා විහාරාධිකාරී  ඇතුල් කෝට්ටේ සිරි පැරකුම්බා පිරිවෙනේ  නියෝජ්‍ය පරිවේනාධිපති ශාස්ත්‍රපති ගරු කටයුතු  උඩුගලකන්දෙ අරියරතන ස්ථවිරයන් වහන්සේ  0711335418 
+address=ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය, අත්තිඩිය
+telephone=+94 711335418
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=ශාස්ත්‍රපති ගරු කටයුතු  උඩුගලකන්දෙ අරියරතන ස්ථවිරයන් වහන්සේ
+note1=The Honorable Udugalakande Ariyarathana Thero, 
+email=
+website=https://veheravihara.lk/
+map=https://
