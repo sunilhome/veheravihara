@@ -408,7 +408,9 @@ footer {
     color: #222;
     margin-top: 8px;
   }
-
+.safe-bottom {
+    height: 0px; /* no extra space */
+}
   #history-title {
     font-family: "Noto Serif Sinhala", "Iskoola Pota", serif;
     font-size: 28px;
@@ -424,5 +426,6 @@ footer {
     text-align: center;
   }
 }
+
 
 
