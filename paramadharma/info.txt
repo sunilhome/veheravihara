@@ -2,8 +2,9 @@ id=t-7
 
 si=පරමධම්ම විහාරය,පන්නිපිටිය
 en=Paramadhhamma Viharaya, Pannipitiya
-abbot= address=පරමධම්ම විහාරය,පන්නිපිටිය
- telephone=+94 
+abbot= 
+address=පරමධම්ම විහාරය,පන්නිපිටිය
+ telephone=+94 xxx
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=
 note1=
