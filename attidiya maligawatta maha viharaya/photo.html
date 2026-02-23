@@ -1,76 +1,104 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Temple Page</title>
 <meta name="description" id="metaDescription" content="">
 
-<link rel="stylesheet" href="../provinces/style.css">
+<link rel="stylesheet" href="new-style.css">
 
 </head>
+
 <body>
 
-<!-- Headings -->
-<div class="title-box1">
-  <h1 id="title-si"></h1>
-  <h2 id="title-en"></h2>
-</div>
+  <!-- top fixed band -->
+<div class="top-band">
+  <a href="javascript:history.back()" class="top-icon">&#8592;</a>
+  <a href="/index.html" class="top-icon">&#127969;</a>
+  <a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
+  <a href="contact.html" class="top-icon top-mail">&#128233;</a>
+</div> 
 
-<img src="1.webp" class="main-image" alt="Temple Image 1" loading="lazy">
-<img src="2.webp" class="main-image" alt="Temple Image 2" loading="lazy">
-<img src="3.webp" class="main-image" alt="Temple Image 3" loading="lazy">
-<img src="4.webp" class="main-image" alt="Temple Image 4" loading="lazy">
-<img src="5.webp" class="main-image" alt="Temple Image 5" loading="lazy">
-<img src="6.webp" class="main-image" alt="Temple Image 6" loading="lazy">
-<img src="7.webp" class="main-image" alt="Temple Image 7" loading="lazy">
-<img src="8.webp" class="main-image" alt="Temple Image 8" loading="lazy">
+  <!-- content -->
+  <div class="content1">
+
+    <!-- full-width sub-band inside content -->
+    <div class="sub-band">
+      <!-- icon centered on top -->
+      <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+
+      <!-- Sinhala text below icon -->
+      <div class="sub-band-text">
+        <p id="title-si"></p>
+        <p id="address-si"></p>
+      </div>
+
+      <div class="sub-band-text1">
+        <p id="title-en"></p>
+      </div>
+    </div>  
+
+    <!-- Temple photos -->
+    <img src="1.webp" class="main-image" alt="Buddhist Temple">
+    <img src="2.webp" class="main-image" alt="Buddhist Temple">
+    <img src="3.webp" class="main-image" alt="Buddhist Temple">
+    <img src="4.webp" class="main-image" alt="Buddhist Temple">
+    <img src="5.webp" class="main-image" alt="Buddhist Temple">
+    <img src="6.webp" class="main-image" alt="Buddhist Temple">
+    <img src="7.webp" class="main-image" alt="Buddhist Temple">
+    <img src="8.webp" class="main-image" alt="Buddhist Temple">
+    <img src="9.webp" class="main-image" alt="Buddhist Temple">
+    <img src="10.webp" class="main-image" alt="Buddhist Temple">
+    <img src="11.webp" class="main-image" alt="Buddhist Temple">
+    <img src="12.webp" class="main-image" alt="Buddhist Temple">
+
+  </div>
 
 <footer>
-  <div class="footer-content">
-    © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-    සංකල්පය: දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-    සම්පත් රණසිංහ<br>
-    දත්ත: ධනේශ් රණසිංහ
-  </div>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
 </footer>
 
-<!-- Load Temple Info -->
+<!-- Load Temple Info dynamically from info.txt -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    fetch("info.txt")
+    .then(res => res.text())
+    .then(data => {
+        const info = {};
+        data.split("\n").forEach(line => {
+            line = line.trim();
+            if (!line || !line.includes("=")) return;
+            const [key, ...rest] = line.split("=");
+            info[key.trim()] = rest.join("=").trim();
+        });
 
-  fetch("info.txt")
-  .then(res => res.text())
-  .then(data => {
+        // Fill titles and address
+        document.getElementById("title-si").textContent = info.si || "";
+        document.getElementById("title-en").textContent = info.en || "";
 
-    const info = {};
+        if (info.address) {
+            const parts = info.address.split(",");
+            document.getElementById("address-si").textContent = parts.length > 1 ? parts[1].trim() : info.address;
+        }
 
-    data.split("\n").forEach(line => {
-      line = line.trim();
-      if (!line || !line.includes("=")) return;
+        // Set browser title
+        document.title = info.si || "Temple Page";
 
-      const [key, ...rest] = line.split("=");
-      info[key.trim()] = rest.join("=").trim();
-    });
+        // Set meta description
+        if (info.desc) {
+            document.getElementById("metaDescription").setAttribute("content", info.desc);
+        }
 
-    // Titles
-    document.getElementById("title-si").textContent = info.si || "";
-    document.getElementById("title-en").textContent = info.en || "";
-
-    // Browser title
-    document.title = info.si || "Temple Page";
-
-    // Meta description (use desc if available)
-    if (info.desc) {
-      document.getElementById("metaDescription")
-        .setAttribute("content", info.desc);
-    }
-
-  })
-  .catch(err => console.error("Error loading info:", err));
-
+        console.log("Temple info loaded:", info);
+    })
+    .catch(err => console.error("Error loading temple info:", err));
 });
 </script>
 
