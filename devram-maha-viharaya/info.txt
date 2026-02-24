@@ -6,8 +6,5 @@ address=ශ්‍රී දෙව්රම් මහා විහාරය, ප�
 telephone=+94 114306074
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=ආචාර්ය කොලොන්නාවේ සිරි සුමංගල මහානායක ස්ථවිර 
-map:https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4461.627223357085!2d79.9390000754784!3d6.85387481923498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2505e6a7adac3%3A0xc0d99b323ab3d7fb!2sSri%20Devram%20Viharaya%20Temple!5e1!3m2!1sen!2slk!4v1771943826889!5m2!1sen!2slk
 note1=Most Venarabel Kolonnawe Siri Sumangala Thero 
-
-
-
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15556.379027612238!2d79.93129670449576!3d6.853869390767527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2505e6a7adac3%3A0xc0d99b323ab3d7fb!2sSri%20Devram%20Viharaya%20Temple!5e1!3m2!1sen!2slk!4v1771955274695!5m2!1sen!2slk
