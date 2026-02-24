@@ -11,10 +11,9 @@
   body {
     margin: 0;
     padding: 0;
-    background: #ffffff;   /* White background */
+    background: #ffffff;
   }
 </style>
-
 </head>
 
 <body>
@@ -34,53 +33,57 @@
     <div class="sub-band-text1">
       <p>Sri Dewram Maha Viharaya</p>
     </div>
-  </div>   <!-- ✅ FIXED: sub-band properly closed -->
-
-<!-- CONTACT DETAILS -->
-<div class="info-box">
-  <!-- Map -->
-  <div class="contact-item">
-    <iframe id="contact-map"
-      width="100%" height="250"
-      style="border:0;"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
   </div>
 
-<div class="contact-info">
+  <!-- CONTACT DETAILS -->
+  <div class="info-box">
 
-  <p class="contact-row">
-    <span class="label en">Address:</span>
-    <span class="label si">ලිපිනය:</span>
-    <span class="value" id="contact-address"></span>
-  </p>
+    <!-- Map -->
+    <div class="contact-item">
+      <iframe id="contact-map"
+        width="100%" height="250"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
-  <p class="contact-row">
-    <span class="label en">Email:</span>
-    <span class="label si">ඊ-තැපැල්:</span>
-    <span class="value" id="contact-email"></span>
-  </p>
+    <div class="contact-info">
 
-<p class="contact-row">
-  <span class="label en">Telephone:</span>
-  <span class="label si">දුරකථන:</span>
-  <a class="value" id="contact-telephone" href=""></a>
-</p>
+      <p class="contact-row">
+        <span class="label en">Address:</span>
+        <span class="label si">ලිපිනය:</span>
+        <span class="value" id="contact-address"></span>
+      </p>
 
-  <p class="contact-row">
-    <span class="label en">Website:</span>
-    <span class="label si">වෙබ් අඩවිය:</span>
-    <span class="value" id="contact-website"></span>
-  </p>
-</div>
-</div>
+      <p class="contact-row">
+        <span class="label en">Email:</span>
+        <span class="label si">ඊ-තැපැල්:</span>
+        <span class="value" id="contact-email"></span>
+      </p>
+
+      <p class="contact-row">
+        <span class="label en">Telephone:</span>
+        <span class="label si">දුරකථන:</span>
+        <a class="value" id="contact-telephone" href=""></a>
+      </p>
+
+      <p class="contact-row">
+        <span class="label en">Website:</span>
+        <span class="label si">වෙබ් අඩවිය:</span>
+        <span class="value" id="contact-website"></span>
+      </p>
+
+    </div>
+  </div>
+
+</div> <!-- END content -->
 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const templeID = "t-6";
+    const templeID = "t-10";
 
     fetch("info.txt")
         .then(res => res.text())
@@ -108,35 +111,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     info[key.trim()] = rest.join("=").trim();
                 }
             });
+
             if (info.map) {
                 document.getElementById("contact-map").src = info.map;
             }
 
-            /* Address */
             if (info.address) {
                 document.getElementById("contact-address").textContent = info.address;
             }
 
-            /* Email */
             if (info.email) {
-                document.getElementById("contact-email").innerHTML =
-                    `<a href="mailto:${info.email}">${info.email}</a>`;
+                const emailEl = document.getElementById("contact-email");
+                const emailLink = document.createElement("a");
+                emailLink.href = "mailto:" + info.email;
+                emailLink.textContent = info.email;
+                emailEl.appendChild(emailLink);
             }
 
-            /* Telephone */
             if (info.telephone) {
                 const tel = info.telephone.replace(/\s+/g, "");
-              const telEl = document.getElementById("contact-telephone");
-telEl.textContent = info.telephone;
-telEl.href = "tel:" + tel;
-
+                const telEl = document.getElementById("contact-telephone");
+                telEl.textContent = info.telephone;
+                telEl.href = "tel:" + tel;
             }
 
-            /* Fax */
-            /* Website */
             if (info.website) {
-                document.getElementById("contact-website").innerHTML =
-                    `<a href="${info.website}" target="_blank">${info.website}</a>`;
+                const websiteEl = document.getElementById("contact-website");
+                websiteEl.innerHTML =
+                    `<a href="${info.website}" target="_blank" rel="noopener noreferrer">${info.website}</a>`;
             }
 
         })
@@ -144,16 +146,15 @@ telEl.href = "tel:" + tel;
 });
 </script>
 
+
 <footer>
-    <div class="footer-content">
-        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-		සම්පත් රණසිංහ<br>
-        දත්ත: ධනේශ් රණසිංහ
-    </div>
+  <div class="footer-content">
+    © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+    සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+    සම්පත් රණසිංහ<br>
+    දත්ත: ධනේශ් රණසිංහ
+  </div>
 </footer>
 
-    </div>
 </body>
 </html>
-
