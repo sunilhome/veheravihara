@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loading...</title>
+
+<link rel="stylesheet" href="../provinces/new-style.css">
+</head>
+
+<body>
+<div class="wrapper">
+
+    <!-- TITLE -->
+    <div class="page-title">
+        <h1 id="title-si">Loading...</h1>
+        <h2 id="title-en"></h2>
+    </div>
+
+    <!-- LANGUAGE BUTTONS -->
+    <div>
+        <button class="btn" onclick="loadInfo('si')">සිංහල</button>
+        <button class="btn" onclick="loadInfo('en')">English</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="info-box">
+        <h2>History | ඉතිහාසය</h2>
+        <div id="temple-text">Loading...</div>
+    </div>
+
+    <!-- BACK -->
+<div>
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        ← Back to Temple Main Page
+    </button>
+</div>
+<footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+</footer>
+
+
+<script>
+/* LOAD TITLE */
+async function loadTempleInfo() {
+    try {
+   
+        const res = await fetch('info.txt');
+        const text = await res.text();
+        const info = {};
+
+        text.split(/\r?\n/).forEach(line => {
+            const [k,v] = line.split('=');
+            if(k && v) info[k.trim()] = v.trim();
+     });
+
+        const si = info.si || 'Temple History';
+        const en = info.en || '';
+
+        document.title = si + (en ? ' | ' + en : '');
+        document.getElementById('title-si').textContent = si;
+        document.getElementById('title-en').textContent = en;
+    } 
+	catch(e) {
+        document.title = 'Temple History';
+    }
+}
+
+async function loadInfo(lang) {
+    const file = lang === 'si' ? 'info-si.txt' : 'info-en.txt';
+    const box = document.getElementById('temple-text');
+    box.innerHTML = '';
+
+    try
+	{
+        const res = await fetch(file);
+        const text = await res.text();
+
+        // Split by double or single line breaks
+        text.split(/\r?\n\r?\n|\r?\n/).forEach(line => {
+            const trimmed = line.trim();
+            if (!trimmed) return; // skip empty lines
+
+            if (trimmed.startsWith('#')) {
+                // Lines starting with # → h3
+                const h3 = document.createElement('h3');
+                h3.textContent = trimmed.substring(1).trim(); // remove #
+                box.appendChild(h3);
+            } 
+			else {
+                // Normal paragraph
+                const p = document.createElement('p');
+                p.textContent = trimmed;
+                box.appendChild(p);
+            }
+        });
+
+    } catch {
+        box.textContent = 'Information not available.';
+    }
+}
+
+loadTempleInfo().then(() => loadInfo('si'));
+</script>
+
+</body>
+</html>
