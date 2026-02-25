@@ -9,4 +9,4 @@ note=පූජ්‍ය
 note1=Venerable 
 email=
 website=https://veheravihara.lk/
-map=
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6506.3168970355555!2d79.933879848529!3d6.859663577955916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2508bbc986d31%3A0xdcd48d5aea301a3!2sSri%20Saddharmaramaya!5e1!3m2!1sen!2slk!4v1772038025726!5m2!1sen!2slk
