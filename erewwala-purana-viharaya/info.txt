@@ -1,0 +1,9 @@
+id=t-0
+si=ඇරැව්වල පුරාණ රජමහා විහාරය
+en=Erewwala Purana Rjamaha Viharaya
+abbot=
+address=ඇරැව්වල පුරාණ රජමහා විහාරය, ඇරව්වල පණ්නිපිටිය.
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8934.014602231453!2d79.93174475857536!3d6.8301290241073795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25014013dd8b3%3A0xa9a274cc366de9d5!2sArawwala%20Ancient%20Temple!5e1!3m2!1sen!2slk!4v1772190303302!5m2!1sen!2slk
