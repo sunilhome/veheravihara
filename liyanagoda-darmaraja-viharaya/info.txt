@@ -6,7 +6,8 @@ address=ධර්ම රාජ විහාරය ලියනගොඩ
 telephone=+94 112843266
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=රාජකීය පණ්ඩිත  ශාස්ත්‍රවේදී කෝට්ටේ රාහුල හිමි
-map:https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17846.447472306707!2d79.94901471352267!3d6.855515195126337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2505432fe1493%3A0xa4490a92d73d051d!2sDharma%20Raja%20Maha%20Viharaya%20Liyanagoda!5e1!3m2!1sen!2slk!4v1771776887543!5m2!1sen!2slk"
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17846.447472306707!2d79.94901471352267!3d6.855515195126337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2505432fe1493%3A0xa4490a92d73d051d!2sDharma%20Raja%20Maha%20Viharaya%20Liyanagoda!5e1!3m2!1sen!2slk!4v1771776887543!5m2!1sen!2slk"
 note1=
+
 
 
