@@ -7,7 +7,8 @@ telephone=+94 711335418
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=ශාස්ත්‍රපති ගරු කටයුතු  උඩුගලකන්දෙ අරියරතන ස්ථවිරයන් වහන්සේ
 note1=The Honorable Udugalakande Ariyarathana Thero, 
-email=
+email=@
 website=https://veheravihara.lk/
-map=https://
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2390.5949318796056!2d79.8846470944669!3d6.836592372006903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0f3346e8a5%3A0x4b0e4a482963b8c0!2sAttidiya%20Maligawaththa%20Viharaya!5e1!3m2!1sen!2slk!4v1772208260550!5m2!1sen!2slk
+
 
