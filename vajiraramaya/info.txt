@@ -1,0 +1,9 @@
+id=t-0
+si=සිරි වජිරඤාණ ධර්මායතනය 
+en=Siri Vajiragnana Darmayathanaya, Maharagama
+abbot=
+address=සිරි වජිරඤාණ ධර්මායතනය, වැව පාර මහරගම 
+telephone=+94 xxx
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17847.009989820646!2d79.90878431352172!3d6.8404773960329335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9e0505a0a3%3A0x34ebd885f28ff34b!2sSiri%20Vajiragnana%20Dharmayathanaya!5e1!3m2!1sen!2slk!4v1772298756227!5m2!1sen!2slk
