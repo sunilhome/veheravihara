@@ -1,0 +1,9 @@
+id=t-0
+si=වාපිකාරාම විහාරය 
+en=Erewwala Purana Rjamaha Viharaya
+abbot=
+address=වාපිකාරාම විහාරය , මහරගම 
+telephone=+94 xxx
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17846.905442696883!2d79.90537956352186!3d6.843274745864399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9c45b1d395%3A0xa2cd91ba2bf9cc78!2sVapikaramaya%2C%20Lake%20Road%2C%20Dehiwala%20Rd%2C%20Maharagama%2010280!5e1!3m2!1sen!2slk!4v1772294442552!5m2!1sen!2slk
