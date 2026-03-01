@@ -12,5 +12,6 @@ note=පූජ්‍ය සේනපුර නන්දරතන ස්වාම
 note1=Venerable Senapura Nandharathana Thero.
 email=
 website=https://veheravihara.lk/
-map=
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15845.802804330835!2d79.92491483688353!3d6.836442580298941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2503f8684cbf7%3A0xdc94d6c7e1fd4003!2zRMWrdmEgVGVtcGxlIOC2r-C3luC3gCDgtrTgtrHgt4rgt4Pgtr0!5e0!3m2!1sen!2slk!4v1772369362433!5m2!1sen!2slk
+
 
