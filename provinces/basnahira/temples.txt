@@ -1,19 +1,19 @@
-mahamegaramaya|මහාමේඝාරාමය, මහරගම|Mahamegaramaya, Maharagama 
-isipathanaramaya|ඉසිපතනාරාමය, නාවින්න|Isipathanaramaya, nNawinna
+mahamegaramaya|මහාමේඝාරාමය, මහරගම|Mahamegaramaya, Maharagama
+isipathanaramaya|ඉසිපතනාරාමය, නාවින්න|Isipathanaramaya, Nawinna
 nawinna-rajamaha-viharaya|නාවින්න රජමහා විහාරය|Nawinna RajaMaha Viharaya
 siri-vijayasiriwardhanaramaya|නැගෙනහිර ඇරැව්වල සිරිවිජය සිරිවර්ධනාරාමය|Erewwala East Sirivijayasiriwardhanaramaya
 nalandaramaya|නාලන්දාරාමය|Nalandharamaya
 sri-vijayarama-rajamaha-viharaya|ශ්‍රී විජයාරාම රාජමහා විහාරය|Sri Vijayarama Rajamaha Viharaya
-paramadharma|පරමධම්ම මහා විහාරය|Paramadharma maha Viharaya
-attidiya maligawatta maha viharaya|ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය|Attidiya Maligawatta Ancient Maha Viharaya
+paramadharma|පරමධම්ම මහා විහාරය|Paramadharma Maha Viharaya
+attidiya-maligawatta-maha-viharaya|ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය|Attidiya Maligawatta Ancient Maha Viharaya
 liyanagoda-darmaraja-viharaya|ලියනගොඩ ධර්මරාජ විහාරය|Liyanagoda Darmaraja Viharaya
-devram vehera|පන්නිපිටිය ශ්‍රී දෙව්රම් මහා විහාරය|Pannipitiya Sri Dewram Maha Viharaya
+devram-vehera|පන්නිපිටිය ශ්‍රී දෙව්රම් මහා විහාරය|Pannipitiya Sri Devram Maha Viharaya
 saddarmaramaya|ශ්‍රී සද්ධර්මාරාමය පොල්වත්ත|Sri Saddarmaramaya, Polwatta, Pannipitiya
-erewwala-purana-viharaya|ඇරැව්වල පුරාණ රජමහා විහාරය|Erewwala Purana Rjamaha Viharaya
+erewwala-purana-viharaya|ඇරැව්වල පුරාණ රජමහා විහාරය|Erewwala Purana Rajamaha Viharaya
 vapikaramaya|වාපිකාරාම විහාරය මහරගම|Vapikarama Viharaya Maharagama
-vajiraramaya|සිරි වජිරඤාණ ධර්මායතනය මහරගම|Siri Vajiragnana Darmayathanaya, Maharagama
+vajiraramaya|සිරි වජිරඤාණ ධර්මායතනය මහරගම|Siri Vajiragnana Dharmayathanaya, Maharagama
 nigrodaramaya-kottawa|කොට්ටාව නීග්‍රෝධාරාමය|Nigrodharamaya Kottawa
-sirimangalaramaya|පමුණුව සිරිමංගලාරාමය|Pamunuwa Siri Mangalaramaya.
+sirimangalaramaya|පමුණුව සිරිමංගලාරාමය|Pamunuwa Siri Mangalaramaya
 
 
 
