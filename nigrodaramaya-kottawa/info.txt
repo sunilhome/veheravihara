@@ -1,0 +1,11 @@
+id=t-0
+si=නීග්‍රෝධාරාමය කොට්ටාව
+en=Neegrodharamaya-Kottawa
+abbot=
+address=Neegrodharamaya, Kottawa
+telephone=+94
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+
+
+
