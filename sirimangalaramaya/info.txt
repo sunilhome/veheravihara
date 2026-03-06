@@ -1,0 +1,10 @@
+id=t-0
+si=පමුණුව සිරි මංගලාරාමය 
+en=Pamunuwa Siri Mangalaramaya
+abbot=
+address=පමුණුව සිරි මංගලාරාමය, මහරගම
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+map:https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4466.731502718437!2d79.92615641106978!3d6.859600093110231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25087b6c9ee7f%3A0x66ad158b0b2ca269!2zU2lyaSBNYW5nYWxhcmFtYXlhIOC3g-C3kuC2u-C3kiDgtrjgtoLgtpzgtr3gt4_gtrvgt4_gtrjgtro!5e1!3m2!1sen!2slk!4v1772783945529!5m2!1sen!2slk
+
