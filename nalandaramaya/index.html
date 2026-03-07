@@ -27,18 +27,17 @@
       <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 	  
       <div class="sub-band-text">
-        <p>පතිරගොඩ නාලන්දාරාමය</p>
-        <p>පතිරගොඩ </p>
+        <p id="templeSI"></p>
       </div>
-	        <div class="sub-band-text1">
-        <p>Nalandaramaya, Pathiragoda</p>
-  </div>
+      <div class="sub-band-text1">
+        <p id="templeEN"></p>
+      </div>
 		
     </div>
 
-  <div class="slideshow">
-    <img id="slideImg" src="a.webp" alt="Slideshow">
-  </div>
+    <div class="slideshow">
+      <img id="slideImg" src="a.webp" alt="Slideshow">
+    </div>
   
     <img src="x.webp" class="small-image" alt="Buddhist Temple">
 
@@ -48,67 +47,65 @@
         <p id="abbot-info"></p>
         <p class="event-note"></p>
       </div>
-
-		
-  	  <p class="event-note1"></p>
+      <p class="event-note1"></p>
     </div>
   </div>
 
   <div class="text-button-box">
     <a href="history.html" class="icon-link" data-icon="📄">තොරතුරු / Information</a>
     <a href="photo.html" class="icon-link" data-icon="📷">ඡායාරූප / Photos</a>
-<a href="contact.html" class="icon-link" data-icon="🗺️">
-  සිතියම / Maps
-</a>
+    <a href="contact.html" class="icon-link" data-icon="🗺️">සිතියම / Maps</a>
   </div>
 
-<footer>
+  <footer>
     <div class="footer-content">
         © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-		සම්පත් රණසිංහ<br>
+        සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+        සම්පත් රණසිංහ<br>
         දත්ත: ධනේශ් රණසිංහ
     </div>
-</footer>
+  </footer>
+
+  <!-- Test span to show full title -->
+  <h3>Full title: <span id="fullTitle"></span></h3>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const templeID = "t-5";
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
 
-    fetch("info.txt")
-    .then(res => res.text())
-    .then(data => {
-        const info = {};
-        let reading = false;
+    const info = {};
+    data.split("\n").forEach(line => {
+        const parts = line.split("=");
+        if(parts.length >= 2){
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
 
-        data.split("\n").forEach(line => {
-            line = line.trim();
-            if (!line) return;
+    // Update page content
+    document.getElementById("templeSI").textContent = info.si || "";
+    document.getElementById("templeEN").textContent = info.en || "";
+    document.getElementById("abbot-info").textContent = info.abbot || "";
+    document.querySelector(".event-note").textContent = info.note || "";
+    document.querySelector(".event-note1").textContent = info.note1 || "";
 
-            if (line === `id=${templeID}`) {
-                reading = true;
-                return;
-            } 
+    // Update browser title
+    const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
+    document.title = newTitle;
 
-            if (reading && line.startsWith("id=")) {
-                reading = false;
-                return;
-            }
+    // Update meta description
+    const metaDesc = info.desc || "";
+    document.getElementById("metaDescription").setAttribute("content", metaDesc);
 
-            if (reading && line.includes("=")) {
-                const [key, ...rest] = line.split("=");
-                info[key.trim()] = rest.join("=").trim();
-            }
-        });
-        console.log("Info loaded:", info);
-        document.getElementById("abbot-info").textContent = info.abbot || "";
-        document.querySelector(".event-note").textContent = info.note || "";
-  	    document.querySelector(".event-note1").textContent = info.note1 || "";
+    // Update test span
+    document.getElementById("fullTitle").textContent = newTitle;
 
-    })
-    .catch(err => console.error("Temple info error:", err));
-});
+})
+.catch(err => console.error("Info load error:", err));
 </script>
+
 <script>
   const images = ["a.webp", "b.webp", "c.webp"];
   let index = 0;
@@ -120,13 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 3000);
 </script>
 
-
 <div class="safe-bottom"></div>
 </body>
 </html>
-
-
-
-
-
-
