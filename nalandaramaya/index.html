@@ -98,8 +98,14 @@ fetch("info.txt")
 .catch(err => console.error("Info load error:", err));
 </script>
 <div class="safe-bottom"></div>
+	<h3>Full title: <span id="fullTitle"></span></h3>
+
+<script>
+document.getElementById("fullTitle").textContent = document.title;
+</script>
 </body>
 </html>
+
 
 
 
