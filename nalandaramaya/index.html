@@ -95,7 +95,7 @@ fetch("info.txt")
     const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
     document.title = newTitle;
 
-    // Update meta description
+    // ✅ Update meta description
     const metaDesc = info.desc || "";
     document.getElementById("metaDescription").setAttribute("content", metaDesc);
 
@@ -120,3 +120,4 @@ fetch("info.txt")
 <div class="safe-bottom"></div>
 </body>
 </html>
+
