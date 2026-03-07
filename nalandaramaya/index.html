@@ -26,13 +26,13 @@
     <div class="sub-band">
       <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 	  
-      <div class="sub-band-text">
-        <p>පතිරගොඩ නාලන්දාරාමය</p>
-        <p>පතිරගොඩ </p>
-      </div>
-	        <div class="sub-band-text1">
-        <p>Nalandaramaya, Pathiragoda</p>
-  </div>
+    <div class="sub-band-text">
+  <p id="templeSI"></p>
+</div>
+
+<div class="sub-band-text1">
+  <p id="templeEN"></p>
+</div>
 		
     </div>
 
@@ -72,58 +72,36 @@
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const templeID = "t-5";
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
 
-    fetch("info.txt")
-    .then(res => res.text())
-    .then(data => {
-        const info = {};
-        let reading = false;
+    const info = {};
 
-        data.split("\n").forEach(line => {
-            line = line.trim();
-            if (!line) return;
+    data.split("\n").forEach(line => {
+        const parts = line.split("=");
+        if(parts.length >= 2){
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
 
-            if (line === `id=${templeID}`) {
-                reading = true;
-                return;
-            } 
+    document.getElementById("templeSI").textContent = info.si || "";
+    document.getElementById("templeEN").textContent = info.en || "";
+    document.getElementById("abbot-info").textContent = info.abbot || "";
+    document.querySelector(".event-note").textContent = info.note || "";
+    document.querySelector(".event-note1").textContent = info.note1 || "";
 
-            if (reading && line.startsWith("id=")) {
-                reading = false;
-                return;
-            }
+    document.title = info.en || "Temple Page";
 
-            if (reading && line.includes("=")) {
-                const [key, ...rest] = line.split("=");
-                info[key.trim()] = rest.join("=").trim();
-            }
-        });
-        console.log("Info loaded:", info);
-        document.getElementById("abbot-info").textContent = info.abbot || "";
-        document.querySelector(".event-note").textContent = info.note || "";
-  	    document.querySelector(".event-note1").textContent = info.note1 || "";
-
-    })
-    .catch(err => console.error("Temple info error:", err));
-});
+})
+.catch(err => console.error("Info load error:", err));
 </script>
-<script>
-  const images = ["a.webp", "b.webp", "c.webp"];
-  let index = 0;
-  const img = document.getElementById("slideImg");
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    img.src = images[index];
-  }, 3000);
-</script>
-
-
 <div class="safe-bottom"></div>
 </body>
 </html>
+
 
 
 
