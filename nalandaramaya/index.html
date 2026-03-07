@@ -73,7 +73,6 @@
 fetch("info.txt")
 .then(res => res.text())
 .then(data => {
-
     const info = {};
     data.split("\n").forEach(line => {
         const parts = line.split("=");
@@ -96,8 +95,7 @@ fetch("info.txt")
     document.title = newTitle;
 
     // ✅ Update meta description
-    const metaDesc = info.desc || "";
-    document.getElementById("metaDescription").setAttribute("content", metaDesc);
+    document.getElementById("metaDescription").setAttribute("content", info.desc || "");
 
     // Update test span
     document.getElementById("fullTitle").textContent = newTitle;
@@ -120,4 +118,5 @@ fetch("info.txt")
 <div class="safe-bottom"></div>
 </body>
 </html>
+
 
