@@ -93,14 +93,14 @@ fetch("info.txt")
     document.querySelector(".event-note").textContent = info.note || "";
     document.querySelector(".event-note1").textContent = info.note1 || "";
 
-    document.title = info.en || "Temple Page";
-
+   document.title = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
 })
 .catch(err => console.error("Info load error:", err));
 </script>
 <div class="safe-bottom"></div>
 </body>
 </html>
+
 
 
 
