@@ -1,0 +1,17 @@
+id=t-0
+si=පත්තිනි දේවාලය
+en=Paththini Dewalaya Erewwala Pannipitiya
+abbot= 
+address=පත්තිනි දේවාලය  ඇරැව්වල පන්නිපිටිය
+ telephone=+94 xxx
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=මහී ප්‍රධාන කපු මහතා
+note1=
+email=
+website=https://veheravihara.lk/
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.3133700941403!2d79.9338042222814!3d6.831162088335399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25013ff928c9f%3A0x889d77bb81729409!2sPurana%20Viharaya%2C%20Erewwala!5e1!3m2!1sen!2slk!4v1772899367894!5m2!1sen!2slk
+
+
+
+
+
