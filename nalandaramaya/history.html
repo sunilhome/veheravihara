@@ -1,9 +1,9 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="si">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--<meta name="theme-color" content="#000000">-->
+
 <title>Temple Page</title>
 <meta name="description" id="metaDescription" content="">
 
@@ -13,46 +13,41 @@
 
 <body>
 
-  <!-- top fixed band -->
+<!-- top fixed band -->
 <div class="top-band">
   <a href="javascript:history.back()" class="top-icon">&#8592;</a>
   <a href="/index.html" class="top-icon">&#127969;</a>
   <a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
-<a href="contact.html" class="top-icon top-mail">&#128233;</a>
-</div> 
- 
-  <!-- content -->
-  <div class="content">
+  <a href="contact.html" class="top-icon top-mail">&#128233;</a>
+</div>
 
-    <!-- full-width sub-band inside content -->
+<!-- content -->
+<div class="content">
+
+<!-- sub band -->
 <div class="sub-band">
-  <!-- icon centered on top -->
-  <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+<img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 
-  <!-- Sinhala text below icon -->
-  <div class="sub-band-text">
-    <p>පතිරගොඩ නාලන්දාරාමය</p>
-    <p>පතිරගොඩ</p>
-  </div>
-       <div class="sub-band-text1">
-        <p>Nalandaramaya Pathiragoda</p>
-  </div>
+<div class="sub-band-text">
+<p id="templeSI">Loading...</p>
+<p id="templeVillage"></p>
+</div>
 
-</div>  
+<div class="sub-band-text1">
+<p id="templeEN"></p>
+</div>
 
-    <!-- LANGUAGE BUTTONS -->
-    <div class="button-box">
-      <button class="action-btn" onclick="loadInfo('si')">සිංහල</button>
-      <button class="action-btn" onclick="loadInfo('en')">English</button>
-    </div>
+</div>
+
+<!-- LANGUAGE BUTTONS -->
 <div class="button-box">
-  <button class="audio" onclick="toggleAudio('a1', this)">
-    🔊
-  </button>
+<button class="action-btn" onclick="loadInfo('si')">සිංහල</button>
+<button class="action-btn" onclick="loadInfo('en')">English</button>
+</div>
 
-  <button class="audio" onclick="toggleAudio('a2', this)">
-    🔊
-  </button>
+<div class="button-box">
+<button class="audio" onclick="toggleAudio('a1', this)">🔊</button>
+<button class="audio" onclick="toggleAudio('a2', this)">🔊</button>
 </div>
 
 <audio id="a1" src="audio1.mp3"></audio>
@@ -65,7 +60,6 @@ let currentBtn = null;
 function toggleAudio(id, btn) {
   const audio = document.getElementById(id);
 
-  // same button clicked → stop & reset
   if (currentAudio === audio && !audio.paused) {
     audio.pause();
     audio.currentTime = 0;
@@ -75,23 +69,21 @@ function toggleAudio(id, btn) {
     return;
   }
 
-  // stop previous audio
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
+
   if (currentBtn) {
     currentBtn.classList.remove('active');
   }
 
-  // play new audio
   audio.play();
   btn.classList.add('active');
 
   currentAudio = audio;
   currentBtn = btn;
 
-  // 🔹 RESET WHEN AUDIO ENDS
   audio.onended = function () {
     btn.classList.remove('active');
     currentAudio = null;
@@ -100,65 +92,106 @@ function toggleAudio(id, btn) {
 }
 </script>
 
-    <!-- CONTENT -->
-    <div class="info-box">
-      <h2 id="history-title">ඉතිහාසය</h2>
-      <div id="temple-text">Loading...</div>
-    </div>
+<!-- CONTENT -->
+<div class="info-box">
+<h2 id="history-title">ඉතිහාසය</h2>
+<div id="temple-text">Loading...</div>
+</div>
 
-    <!-- BACK -->
-    <button class="back-btn" onclick="window.location.href='index.html'">
-      ← Back to Temple Main Page
-    </button>
+<!-- BACK -->
+<button class="back-btn" onclick="window.location.href='index.html'">
+← Back to Temple Main Page
+</button>
 
-  </div>
+</div>
+
 <footer>
-    <div class="footer-content">
-        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-		සම්පත් රණසිංහ<br>
-        දත්ත: ධනේශ් රණසිංහ
-    </div>
+<div class="footer-content">
+© ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+සම්පත් රණසිංහ<br>
+දත්ත: ධනේශ් රණසිංහ
+</div>
 </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    async function loadInfo(lang) {
-      const file = lang === 'si' ? 'info-si.txt' : 'info-en.txt';
-      const box = document.getElementById('temple-text');
-      const title = document.getElementById('history-title');
+<!-- LOAD HISTORY TEXT -->
+<script>
+async function loadInfo(lang) {
 
-      title.textContent = (lang === 'si') ? 'ඉතිහාසය' : 'History';
-      box.innerHTML = '';
+const file = (lang === 'si') ? 'info-si.txt' : 'info-en.txt';
 
-      try {
-        const res = await fetch(file);
-        const text = await res.text();
+const box = document.getElementById('temple-text');
+const title = document.getElementById('history-title');
 
-        text.split(/\r?\n\r?\n|\r?\n/).forEach(line => {
-          const t = line.trim();
-          if (!t) return;
+title.textContent = (lang === 'si') ? 'ඉතිහාසය' : 'History';
 
-          if (t.startsWith('#')) {
-            const h3 = document.createElement('h3');
-            h3.textContent = t.substring(1).trim();
-            box.appendChild(h3);
-          } else {
-            const p = document.createElement('p');
-            p.textContent = t;
-            box.appendChild(p);
-          }
-        });
+box.innerHTML = '';
 
-      } catch {
-        box.textContent = 'Information not available.';
-      }
-    }
+try {
 
-    // initial load
-    loadInfo('si');
-  </script>
+const res = await fetch(file);
+const text = await res.text();
+
+text.split(/\n\n+/).forEach(block => {
+
+block = block.trim();
+if(!block) return;
+
+if(block.startsWith('#')){
+const h = document.createElement('h3');
+h.textContent = block.substring(1);
+box.appendChild(h);
+}
+else{
+const p = document.createElement('p');
+p.textContent = block;
+box.appendChild(p);
+}
+
+});
+
+}
+
+catch{
+box.textContent = "Information not available.";
+}
+
+}
+
+loadInfo('si');
+</script>
+
+<!-- LOAD TEMPLE INFO -->
+<script>
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
+
+const info = {};
+
+data.split("\n").forEach(line=>{
+const parts = line.split("=");
+
+if(parts.length>=2){
+const key = parts[0].trim();
+const value = parts.slice(1).join("=").trim();
+info[key]=value;
+}
+
+});
+
+document.getElementById("templeSI").textContent = info.si || "";
+document.getElementById("templeEN").textContent = info.en || "";
+document.getElementById("templeVillage").textContent = info.village || "";
+
+const newTitle = (info.en || "Temple") + " | History | Sri Lanka";
+document.title = newTitle;
+
+document.getElementById("metaDescription")
+.setAttribute("content", info.desc || "");
+
+});
+</script>
 
 </body>
-
 </html>
