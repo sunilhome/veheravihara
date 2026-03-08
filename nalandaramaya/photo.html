@@ -39,20 +39,8 @@
 
 </div>
 
-<!-- PHOTOS -->
-
-<img src="1.webp" class="main-image" alt="Buddhist Temple">
-<img src="2.webp" class="main-image" alt="Buddhist Temple">
-<img src="3.webp" class="main-image" alt="Buddhist Temple">
-<img src="4.webp" class="main-image" alt="Buddhist Temple">
-<img src="5.webp" class="main-image" alt="Buddhist Temple">
-<img src="6.webp" class="main-image" alt="Buddhist Temple">
-<img src="7.webp" class="main-image" alt="Buddhist Temple">
-<img src="8.webp" class="main-image" alt="Buddhist Temple">
-<img src="9.webp" class="main-image" alt="Buddhist Temple">
-<img src="10.webp" class="main-image" alt="Buddhist Temple">
-
-<!-- you can continue up to 30 like you already do -->
+<!-- PHOTO GALLERY -->
+<div id="photo-gallery"></div>
 
 </div>
 
@@ -65,6 +53,7 @@
 </div>
 </footer>
 
+<!-- LOAD TEMPLE INFO -->
 <script>
 
 fetch("info.txt")
@@ -99,6 +88,39 @@ document.getElementById("metaDescription")
 
 })
 .catch(err => console.log("Info load error", err));
+
+</script>
+
+<!-- AUTO LOAD PHOTOS -->
+<script>
+
+let gallery = document.getElementById("photo-gallery");
+
+let i = 1;
+
+function loadNextImage(){
+
+let img = new Image();
+
+img.src = i + ".webp";
+
+img.className = "main-image";
+
+img.alt = "Buddhist Temple Photo";
+
+img.onload = function(){
+
+gallery.appendChild(img);
+
+i++;
+
+loadNextImage();
+
+};
+
+}
+
+loadNextImage();
 
 </script>
 
