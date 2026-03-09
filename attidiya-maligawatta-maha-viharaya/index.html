@@ -1,0 +1,160 @@
+     <!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temple Page</title>
+<meta name="description" id="metaDescription" content="">
+
+<link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<div class="title-box1">
+    <h1 id="title-si"></h1>
+    <h2 id="title-en"></h2>
+</div>
+
+<img src="a.webp" class="main-image" alt="Buddhist Temple">
+<img src="b.webp" class="small-image" alt="Buddhist Temple">
+
+<div class="event-box">
+    <div class="event-text">
+        <h2>විහාරාධිකාරී</h2>
+        <p id="abbot-info"></p>
+        <p class="event-note"></p>
+    </div>
+</div>
+
+<div class="nav-buttons">
+    <button class="nav-btn" id="prevBtn">◀ Previous</button>
+    <button class="nav-btn" id="nextBtn">Next ▶</button>
+</div>
+
+<div class="button-box">
+      <a href="history.html" class="action-btn">තොරතුරු/Information</a>
+	  <a href="photo.html" class="action-btn">ඡායාරූප / Photos</a>
+      <button class="action-btn" onclick="window.open('https://www.google.com/maps/search/' + temple)">සිතියම / Maps</button>
+      <button class="action-btn" onclick="window.open('' + temple)">වීඩියෝ / Videos</button>
+</div>
+
+<div class="button-box">
+    <button class="action-btn" onclick="window.location.href='../../../../index.html'">🏠 පළමු පිටුවට</button>
+</div>
+
+<div class="contact-box">
+    <div class="contact-item">
+        <span class="label">ලිපිනය :</span>
+        <span id="templeAddress"></span>
+    </div>
+
+    <div class="contact-item">
+        <span class="label">දුරකථන :</span>
+        <a id="templePhone"></a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+		සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+</footer>
+
+<script>
+let templeID = "t-3";
+let temple = "";
+
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
+
+    const lines = data.split("\n");
+    const info = {};
+    let reading = false;
+
+    lines.forEach(line => {
+        line = line.trim();
+
+        if (line === `id=${templeID}`) {
+            reading = true;
+            return;
+        }
+
+        if (reading && line.startsWith("id=")) {
+            reading = false;
+        }
+
+        if (reading && line.includes("=")) {
+            const parts = line.split("=");
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
+
+    /* ===== PAGE TITLE (Pattern 1) ===== */
+    document.title = (info.si || info.en || "Temple") + " - Sri Lanka";
+    document.getElementById("title-si").textContent = info.si || "";
+    document.getElementById("title-en").textContent = info.en || "";
+
+    /* ===== DETAILS ===== */
+    document.getElementById("abbot-info").textContent = info.abbot || "";
+    document.querySelector(".event-note").textContent = info.note || "";
+
+    /* ===== ADDRESS ===== */
+    if (info.address) {
+        document.getElementById("templeAddress").textContent = info.address;
+    }
+
+    /* ===== TELEPHONE ===== */
+    if (info.telephone) {
+        const phone = document.getElementById("templePhone");
+        phone.textContent = info.telephone;
+        phone.href = "tel:" + info.telephone.replace(/[^0-9+]/g, "");
+    }
+
+    /* ===== MAP & VIDEO VARIABLE ===== */
+    temple = info.var || "";
+
+    /* ===== SEO META DESCRIPTION ===== */
+    document.getElementById("metaDescription").setAttribute(
+        "content",
+        info.desc
+            ? info.desc
+            : (info.si || "") + " (" + (info.en || "") +
+              ") පිහිටි ශ්‍රී ලංකාවේ බෞද්ධ විහාරස්ථානයකි."
+    );
+})
+.catch(err => console.error("Temple info error:", err));
+</script>
+<!-- Default Statcounter code for Temple Website https://sunilhome.github.io/gb
+-->
+<script type="text/javascript">
+var sc_project=13198290; 
+var sc_invisible=1; 
+var sc_security="49a5504e"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13198290/0/49a5504e/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
