@@ -7,7 +7,7 @@ sri-vijayarama-rajamaha-viharaya|ශ්‍රී විජයාරාම රා
 paramadharma|පරමධම්ම මහා විහාරය|Paramadharma Maha Viharaya
 attidiya-maligawatta-maha-viharaya|ඓතිහාසික අත්තිඩිය මාලිගාවත්ත පුරාණ මහා විහාරය|Attidiya Maligawatta Ancient Maha Viharaya
 liyanagoda-darmaraja-viharaya|ලියනගොඩ ධර්මරාජ විහාරය|Liyanagoda Darmaraja Viharaya
-devram-vihera|පන්නිපිටිය ශ්‍රී දෙව්රම් මහා විහාරය|Pannipitiya Sri Devram Maha Viharaya
+devram-viharaya|පන්නිපිටිය ශ්‍රී දෙව්රම් මහා විහාරය|Pannipitiya Sri Devram Maha Viharaya
 saddarmaramaya|ශ්‍රී සද්ධර්මාරාමය පොල්වත්ත|Sri Saddarmaramaya, Polwatta, Pannipitiya
 erewwala-purana-viharaya|ඇරැව්වල පුරාණ රජමහා විහාරය|Erewwala Purana Rajamaha Viharaya
 vapikaramaya|වාපිකාරාම විහාරය මහරගම|Vapikarama Viharaya Maharagama
@@ -16,6 +16,7 @@ nigrodaramaya-kottawa|කොට්ටාව නීග්‍රෝධාරාම
 sirimangalaramaya|පමුණුව සිරිමංගලාරාමය|Pamunuwa Siri Mangalaramaya
 jinaratanaramaya|සිරි ජිනරතනාරාමය පතිරගොඩ|Siri Jinarathanaramaya pathiragoda
 paththini|ඇරැව්වල පත්තිනි දේවාලය|Erewwala Paththini Devalaya
+
 
 
 
