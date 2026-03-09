@@ -2,10 +2,11 @@ id=t-0
 si=නීග්‍රෝධාරාමය කොට්ටාව
 en=Neegrodharamaya-Kottawa
 abbot=අධ්‍යාපන අමාත්‍යාංශයේ සමස්ත ලංකා භාවනා ගුරු උපදේශක කොට්‌ඨාව නිග්‍රෝධාරාමාධිපති ශාස්ත්‍රපති පූජ්‍ය පාද මාරකඩ ඡන්දවිමල ස්වාමීන් වහන්සේ. 
-address=නීග්‍රෝධාරාමය කොට්ටාව
-telephone=+94 714402620
+address=Neegrodharamaya, Kottawa
+telephone=+94
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note= පූජ්‍ය පාද මාරකඩ ඡන්දවිමල ස්වාමීන් වහන්සේ. 
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d557.7015004893111!2d79.97013509995021!3d6.855500685539467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251e3f9d74d2d%3A0x85d57e8a22622c85!2sNigrodaramaya%20tempale!5e1!3m2!1sen!2slk!4v1772700487725!5m2!1sen!2slk
 
 
 
