@@ -89,6 +89,9 @@ document.getElementById("metaDescription")
 })
 .catch(err => console.log("Info load error", err));
 
+</script>
+
+<!-- AUTO LOAD PHOTOS -->
 <script>
 
 let gallery = document.getElementById("photo-gallery");
@@ -102,16 +105,16 @@ img.className = "main-image";
 img.alt = "Buddhist Temple Photo";
 
 img.onload = function(){
-    gallery.appendChild(img);
-    i++;
-    loadNextImage();
+gallery.appendChild(img);
+i++;
+loadNextImage();
 };
 
 img.onerror = function(){
-    i++;
-    if(i <= 30){      // try up to 30 images
-        loadNextImage();
-    }
+i++;
+if(i <= 30){
+loadNextImage();
+}
 };
 
 }
@@ -119,23 +122,28 @@ img.onerror = function(){
 loadNextImage();
 
 </script>
-  <script type="text/javascript">
+
+<script type="text/javascript">
 var sc_project=13209421; 
 var sc_invisible=1; 
 var sc_security="4f7f8b9c"; 
 </script>
+
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
+
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics"
+href="https://statcounter.com/" target="_blank">
+<img class="statcounter"
 src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
 alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+referrerPolicy="no-referrer-when-downgrade">
+</a>
+</div>
+</noscript>
 
 </body>
 </html>
-
-
