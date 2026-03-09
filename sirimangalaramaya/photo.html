@@ -89,33 +89,29 @@ document.getElementById("metaDescription")
 })
 .catch(err => console.log("Info load error", err));
 
-</script>
-
-<!-- AUTO LOAD PHOTOS -->
 <script>
 
 let gallery = document.getElementById("photo-gallery");
-
 let i = 1;
 
 function loadNextImage(){
 
 let img = new Image();
-
 img.src = i + ".webp";
-
 img.className = "main-image";
-
 img.alt = "Buddhist Temple Photo";
 
 img.onload = function(){
+    gallery.appendChild(img);
+    i++;
+    loadNextImage();
+};
 
-gallery.appendChild(img);
-
-i++;
-
-loadNextImage();
-
+img.onerror = function(){
+    i++;
+    if(i <= 30){      // try up to 30 images
+        loadNextImage();
+    }
 };
 
 }
@@ -141,4 +137,5 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
 </body>
 </html>
+
 
