@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temple Photos</title>
+<meta name="description" id="metaDescription" content="">
+
+<link rel="stylesheet" href="../provinces/new-style.css">
+</head>
+
+<body>
+
+<!-- top band -->
+<div class="top-band">
+<a href="javascript:history.back()" class="top-icon">&#8592;</a>
+<a href="/index.html" class="top-icon">&#127969;</a>
+<a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
+<a href="contact.html" class="top-icon top-mail">&#128233;</a>
+</div>
+
+<!-- content -->
+<div class="content1">
+
+<!-- temple header -->
+<div class="sub-band">
+
+<img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+
+<div class="sub-band-text">
+<p id="templeSI">Loading...</p>
+<p id="templeVillage"></p>
+</div>
+
+<div class="sub-band-text1">
+<p id="templeEN"></p>
+</div>
+
+</div>
+
+<!-- PHOTO GALLERY -->
+<div id="photo-gallery"></div>
+
+</div>
+
+<footer>
+<div class="footer-content">
+© ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+සම්පත් රණසිංහ<br>
+දත්ත: ධනේශ් රණසිංහ
+</div>
+</footer>
+
+<!-- LOAD TEMPLE INFO -->
+<script>
+
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
+
+const info = {};
+
+data.split("\n").forEach(line => {
+
+const parts = line.split("=");
+
+if(parts.length >= 2){
+
+const key = parts[0].trim();
+const value = parts.slice(1).join("=").trim();
+info[key] = value;
+
+}
+
+});
+
+document.getElementById("templeSI").textContent = info.si || "";
+document.getElementById("templeEN").textContent = info.en || "";
+document.getElementById("templeVillage").textContent = info.village || "";
+
+const newTitle = (info.en || "Temple") + " | Photos | Sri Lanka";
+document.title = newTitle;
+
+document.getElementById("metaDescription")
+.setAttribute("content", info.desc || "");
+
+})
+.catch(err => console.log("Info load error", err));
+
+</script>
+
+<!-- AUTO LOAD PHOTOS -->
+<script>
+
+let gallery = document.getElementById("photo-gallery");
+
+let i = 1;
+
+function loadNextImage(){
+
+let img = new Image();
+
+img.src = i + ".webp";
+
+img.className = "main-image";
+
+img.alt = "Buddhist Temple Photo";
+
+img.onload = function(){
+
+gallery.appendChild(img);
+
+i++;
+
+loadNextImage();
+
+};
+
+}
+
+loadNextImage();
+
+</script>
+  <script type="text/javascript">
+var sc_project=13209421; 
+var sc_invisible=1; 
+var sc_security="4f7f8b9c"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
+
