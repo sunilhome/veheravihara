@@ -5,8 +5,9 @@ address=සුනේත්‍රා මහා දේවි ජාත්‍යන
 abbot=
 telephone=+94
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
-note=විහාරාධිකාරී පූජ්‍ය රත්මලානේ පඤ්ඤාජීව හිමිපාණන් වහන්සේ 
+note=පූජ්‍ය රත්මලානේ පඤ්ඤාජීව හිමිපාණන් වහන්සේ 
 map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.290546305509!2d79.90150451660158!3d6.855736628900469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b82687b1681%3A0x4042f7171323236b!2sInternational%20Therawada%20Buddhist%20Center!5e0!3m2!1sen!2slk!4v1773136901294!5m2!1sen!2slk
+
 
 
 
