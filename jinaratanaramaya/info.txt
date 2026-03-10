@@ -7,7 +7,7 @@ telephone=+94
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=
 map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4466.732131063239!2d79.91063781106986!3d6.859533093110322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a7c291e4297%3A0x68f7f3b36e32edaa!2sSiri%20Jinarathanaramaya%20Temple!5e1!3m2!1sen!2slk!4v1772812587886!5m2!1sen!2slk
-note1=රාජකීය පණ්ඩිත පූජ්‍ය හබරකඩ ජනානන්ද හිමිපාණන්
+note1=
 
 
 
