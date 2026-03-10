@@ -90,7 +90,7 @@ body {
   text-align: center;
   max-width: 100%;
   height: auto;
-  line-height: 1.4em;
+  line-height: 1.8em;
   padding-top: 15px;
   padding-bottom: 5px;
   overflow: hidden;
@@ -426,6 +426,7 @@ footer {
     text-align: center;
   }
 }
+
 
 
 
