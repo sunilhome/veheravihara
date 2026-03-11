@@ -1,13 +1,13 @@
 id=t-0
 si=පරම ධම්ම විසුද්ධාරාමය කටුවාවල 
- 
-en=Kqatuwawaqla Visuddharamaya
+en=Katuwawala Visuddharamaya
 address=පරම ධම්ම විසුද්ධාරාමය කටුවාවල
 abbot=
 telephone=+94
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=
 map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15845.922939080694!2d79.90287271352129!3d6.832818346494136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25aa45dc9b7df%3A0x3bc213732f7644f8!2z4La04La74La4IOC2sOC2uOC3iuC2uCDgt4Dgt5Lgt4Pgt5Tgtq_gt4rgtrDgt4_gtrvgt4_gtrjgtrogUGFyYW1hIERoYW1tYSBWaXN1ZGRoYXJhbWF5YQ!5e0!3m2!1sen!2slk!4v1773226770362!5m2!1sen!2slk
+
 
 
 
