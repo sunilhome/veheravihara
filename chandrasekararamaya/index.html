@@ -90,12 +90,15 @@ fetch("info.txt")
     document.querySelector(".event-note").textContent = info.note || "";
     document.querySelector(".event-note1").textContent = info.note1 || "";
 
-    // Update browser title
+    // Update browser title (keep working)
     const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
     document.title = newTitle;
 
-    // ✅ Update meta description
-    document.getElementById("metaDescription").setAttribute("content", info.desc || "");
+    // ✅ Updated meta description: si + district + common sentence
+    if(info.si && info.district){
+        const description = info.si + " " + info.district + " දිස්ත්‍රික්කයේ පිහිටි බෞද්ධ විහාරස්ථානයකි. විහාරස්ථානයේ ඉතිහාසය, ඡායාරූප සහ සිතියම veheravihara.lk වෙතින්";
+        document.getElementById("metaDescription").setAttribute("content", description);
+    }
 
     // Update test span
     document.getElementById("fullTitle").textContent = newTitle;
@@ -115,7 +118,7 @@ fetch("info.txt")
   }, 3000);
 </script>
 
-<div class="safe-bottom"></div>]
+<div class="safe-bottom"></div>
 	
 <script type="text/javascript">
 var sc_project=13209421; 
@@ -135,6 +138,3 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 	
 </body>
 </html>
-
-
-
