@@ -68,7 +68,7 @@
   </div>
   <p class="event-note1"></p>
 </div>
-```
+
 
   </div>
 
@@ -165,73 +165,3 @@ referrerpolicy="no-referrer-when-downgrade">
 
 </body>
 </html>
-
-
-<script>
-fetch("info.txt")
-.then(res => res.text())
-.then(data => {
-    const info = {};
-    data.split("\n").forEach(line => {
-        const parts = line.split("=");
-        if(parts.length >= 2){
-            const key = parts[0].trim();
-            const value = parts.slice(1).join("=").trim();
-            info[key] = value;
-        }
-    });
-
-    // Update page content
-    document.getElementById("templeSI").textContent = info.si || "";
-    document.getElementById("templeEN").textContent = info.en || "";
-    document.getElementById("abbot-info").textContent = info.abbot || "";
-    document.querySelector(".event-note").textContent = info.note || "";
-    document.querySelector(".event-note1").textContent = info.note1 || "";
-
-    // Update browser title (keep working)
-    const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
-    document.title = newTitle;
-
-    // ✅ Updated meta description: si + district + common sentence
-    if(info.si && info.district){
-        const description = info.si + " " + info.district + " දිස්ත්‍රික්කයේ පිහිටි බෞද්ධ විහාරස්ථානයකි. විහාරස්ථානයේ ඉතිහාසය, ඡායාරූප සහ සිතියම veheravihara.lk වෙතින්";
-        document.getElementById("metaDescription").setAttribute("content", description);
-    }
-
-   
-})
-.catch(err => console.error("Info load error:", err));
-</script>
-
-<script>
-  const images = ["a.webp", "b.webp", "c.webp"];
-  let index = 0;
-  const img = document.getElementById("slideImg");
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    img.src = images[index];
-  }, 3000);
-</script>
-
-<div class="safe-bottom"></div>
-	
-<script type="text/javascript">
-var sc_project=13209421; 
-var sc_invisible=1; 
-var sc_security="4f7f8b9c"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
-	
-</body>
-</html>
-
