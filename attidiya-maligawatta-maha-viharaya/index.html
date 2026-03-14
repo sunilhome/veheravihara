@@ -49,7 +49,6 @@
       </div>
       <p class="event-note1"></p>
     </div>
-  </div>
 
   <div class="text-button-box">
     <a href="history.html" class="icon-link" data-icon="📄">තොරතුරු / Information</a>
@@ -64,11 +63,11 @@
         සම්පත් රණසිංහ<br>
         දත්ත: ධනේශ් රණසිංහ
     </div>
+	  </div>
   </footer>
 
   <!-- Test span to show full title -->
-  <h3>Full title: <span id="fullTitle"></span></h3>
-
+ 
 <script>
 fetch("info.txt")
 .then(res => res.text())
@@ -97,9 +96,7 @@ fetch("info.txt")
     // ✅ Update meta description
     document.getElementById("metaDescription").setAttribute("content", info.desc || "");
 
-    // Update test span
-    document.getElementById("fullTitle").textContent = newTitle;
-
+  
 })
 .catch(err => console.error("Info load error:", err));
 </script>
