@@ -66,8 +66,6 @@
     </div>
   </footer>
 
-  <!-- Test span to show full title -->
-  <h3>Full title: <span id="fullTitle"></span></h3>
 
 <script>
 fetch("info.txt")
@@ -97,9 +95,7 @@ fetch("info.txt")
     // ✅ Update meta description
     document.getElementById("metaDescription").setAttribute("content", info.desc || "");
 
-    // Update test span
-    document.getElementById("fullTitle").textContent = newTitle;
-
+	
 })
 .catch(err => console.error("Info load error:", err));
 </script>
