@@ -1,0 +1,15 @@
+
+si=ශ්‍රී බෝධි පිරිවෙන් විහාරය,  බෝධිය පාර  උඩහමුල්ල 
+en=Sri Bodhi Piriven Viharaya, Bodhiya Road, Udahamulla
+abbot= 
+address=ශ්‍රී බෝධි පිරිවෙන් විහාරය,  බෝධිය පාර  උඩහමුල්ල 
+telephone=+94
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note= 
+district=colombo
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.1471175435636!2d79.91098887547847!3d6.87296991900264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a7154d26683%3A0xea45162f5e0bdccd!2sSri%20Bodhi%20Vihara%20Pirivena!5e0!3m2!1sen!2slk!4v1773595340622!5m2!1sen!2slk
+
+
+
+
+
