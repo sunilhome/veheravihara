@@ -155,29 +155,38 @@ el.href = "tel:" + tel;
 /* Website */
 if(info.website){
 document.getElementById("contact-website").innerHTML =
-`<a href="${info.website}" target="_blank">${info.website}</a>`;
+`<a href="${info.website}" target="_blank" rel="noopener noreferrer">${info.website}</a>`;
 }
 
 })
 .catch(err => console.log("Info load error", err));
 
 </script>
-  <script type="text/javascript">
+
+<!-- StatCounter -->
+<script type="text/javascript">
 var sc_project=13209421; 
 var sc_invisible=1; 
 var sc_security="4f7f8b9c"; 
 </script>
+
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
+
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics"
+href="https://statcounter.com/" target="_blank">
+<img class="statcounter"
 src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
 alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+referrerpolicy="no-referrer-when-downgrade">
+</a>
+</div>
+</noscript>
+
+<!-- End Statcounter Code -->
 
 </body>
 </html>
-
