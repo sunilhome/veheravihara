@@ -27,23 +27,19 @@
       <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
 	  
       <div class="sub-band-text">
-        <p>ඇරැව්වල පුරාණ රජමහා විහාරය</p>
-        <p>ඇරව්වල පණ්නිපිටිය</p>
+        <p id="templeSI"></p>
       </div>
-	        <div class="sub-band-text1">
-        <p>Erewwala Purana Rjamaha Viharaya</p>
+      <div class="sub-band-text1">
+        <p id="templeEN"></p>
       </div>
-
-	  
-	  
-	  
+		
     </div>
 
-  <div class="slideshow">
-    <img id="slideImg" src="a.webp" alt="Slideshow">
-  </div>
+    <div class="slideshow">
+      <img id="slideImg" src="a.webp" alt="Slideshow">
+    </div>
   
-    <img src="x.webp" class="small-image" alt="Buddhist Temple">
+    <img src="x.webp" class="small-image" alt="Temple image">
 
     <div class="event-box">
       <div class="event-text">
@@ -51,67 +47,59 @@
         <p id="abbot-info"></p>
         <p class="event-note"></p>
       </div>
-	          <p class="event-note1"></p>
-
+      <p class="event-note1"></p>
     </div>
-  </div>
 
 
   <div class="text-button-box">
     <a href="history.html" class="icon-link" data-icon="📄">තොරතුරු / Information</a>
     <a href="photo.html" class="icon-link" data-icon="📷">ඡායාරූප / Photos</a>
-<a href="contact.html" class="icon-link" data-icon="🗺️">
-  සිතියම / Maps
-</a>
+    <a href="contact.html" class="icon-link" data-icon="🗺️">සිතියම / Maps</a>
   </div>
 
-<footer>
+  <footer>
     <div class="footer-content">
         © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-		සම්පත් රණසිංහ<br>
+        සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+        සම්පත් රණසිංහ<br>
         දත්ත: ධනේශ් රණසිංහ
     </div>
-</footer>
+ </div>
+  </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const templeID = "t-0";
+ <script>
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
+    const info = {};
+    data.split("\n").forEach(line => {
+        const parts = line.split("=");
+        if(parts.length >= 2){
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
 
-    fetch("info.txt")
-    .then(res => res.text())
-    .then(data => {
-        const info = {};
-        let reading = false;
+    // Update page content
+    document.getElementById("templeSI").textContent = info.si || "";
+    document.getElementById("templeEN").textContent = info.en || "";
+    document.getElementById("abbot-info").textContent = info.abbot || "";
+    document.querySelector(".event-note").textContent = info.note || "";
+    document.querySelector(".event-note1").textContent = info.note1 || "";
 
-        data.split("\n").forEach(line => {
-            line = line.trim();
-            if (!line) return;
+    // Update browser title
+    const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
+    document.title = newTitle;
 
-            if (line === `id=${templeID}`) {
-                reading = true;
-                return;
-            } 
+    // ✅ Update meta description
+    document.getElementById("metaDescription").setAttribute("content", info.desc || "");
 
-            if (reading && line.startsWith("id=")) {
-                reading = false;
-                return;
-            }
 
-            if (reading && line.includes("=")) {
-                const [key, ...rest] = line.split("=");
-                info[key.trim()] = rest.join("=").trim();
-            }
-        });
-        console.log("Info loaded:", info);
-        document.getElementById("abbot-info").textContent = info.abbot || "";
-        document.querySelector(".event-note").textContent = info.note || "";
-		document.querySelector(".event-note1").textContent = info.note1 || "";
-		
-    })
-    .catch(err => console.error("Temple info error:", err));
-});
+})
+.catch(err => console.error("Info load error:", err));
 </script>
+
 <script>
   const images = ["a.webp", "b.webp", "c.webp"];
   let index = 0;
@@ -123,9 +111,26 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 3000);
 </script>
 
-
 <div class="safe-bottom"></div>
+	
+<script type="text/javascript">
+var sc_project=13209421; 
+var sc_invisible=1; 
+var sc_security="4f7f8b9c"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+	
 </body>
 </html>
+
 
 
