@@ -1,0 +1,15 @@
+
+si=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය 
+en=Paramadhamma Niwesa Piriwen Viharaya
+abbot=
+address=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය 
+telephone=+94 
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=රොටුඹ නන්දරාම ස්වාමීන් වහන්සේ 
+
+note1=Venarable Rotubha Nandharama Thero
+map=https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d126763.55910428675!2d79.85851027164297!3d6.847228907722952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparamadhamma%20niwesa%20piriven%20viharayan!5e0!3m2!1sen!2slk!4v1774173908719!5m2!1sen!2slk
+
+
+
+
