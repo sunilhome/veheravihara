@@ -5,6 +5,6 @@ abbot=ශාස්ත්‍රපති අධ්‍යා, ඩිප්, මු
 address=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය 
 telephone=+94 71 835 5363
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
-note=රොටුඹ නන්දාරාම නායක ස්වාමීන් වහන්සේ 
+note=පූජ්‍ය පාද ගරු රොටුඹ නන්දාරාම නායක ස්වාමීන් වහන්සේ 
 note1=Venarable Rotubha Nandharama Nayaka Thero
 map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.448064097707!2d79.90794530000001!3d6.836760700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bcf53aeb9fb%3A0x3748a307195c6a2b!2sParama%20Dhamma%20Nivesa%20Pirivena%20Temple!5e0!3m2!1sen!2slk!4v1774175432538!5m2!1sen!2slk
