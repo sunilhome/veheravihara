@@ -22,6 +22,8 @@ neelammahara-viharaya|නීලම්මහර පුරාණ රජ මහා 
 katuwawala-visudharamaya|කටුවාවල විසුද්ධාරාමය|Katuwawala Visuddaramaya 
 sribodhi|ශ්‍රී බෝධි පිරිවෙන් විහාරය|Sri Bodhi Piriven Viharaya
 paramadhamma-niwesa|පරමධම්ම නිවෙස පිරිවෙන් පුරාණ විහාරය|Paramadamma Niwesa Piriwen Purana Viharaya
+vipashyarama-viharaya|මහරගම ශ්‍රී විපශ්‍යාරාම පුරාණ මහා විහාරය|Maharagama Sri Vipashyarama Purana Viharaya
+
 
 
 
