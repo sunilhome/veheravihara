@@ -74,32 +74,21 @@
 සම්පත් රණසිංහ<br>
 දත්ත: ධනේශ් රණසිංහ
 </div>
-
 </footer>
 </div>
 
 <script>
-
 fetch("info.txt")
 .then(res => res.text())
 .then(data => {
-
 const info = {};
-
 data.split("\n").forEach(line => {
-
 const parts = line.split("=");
-
 if(parts.length >= 2){
-
 const key = parts[0].trim();
-
 const value = parts.slice(1).join("=").trim();
-
 info[key] = value;
-
 }
-
 });
 
 document.getElementById("templeSI").textContent = info.si || "";
@@ -109,42 +98,26 @@ document.querySelector(".event-note").textContent = info.note || "";
 document.querySelector(".event-note1").textContent = info.note1 || "";
 
 const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
-
 document.title = newTitle;
-
 if(info.si && info.district){
-
 const description = info.si + " " + info.district + " දිස්ත්‍රික්කයේ පිහිටි බෞද්ධ විහාරස්ථානයකි. ඉතිහාසය, ඡායාරූප සහ සිතියම veheravihara.lk";
-
 document.getElementById("metaDescription").setAttribute("content", description);
-
 }
-
 const canonicalURL = window.location.href.split("?")[0];
-
 document.getElementById("canonicalLink").setAttribute("href", canonicalURL);
-
 })
 .catch(err => console.error("Info load error:", err));
-
 </script>
 
+  
 <script>
-
 const images = ["a.webp","b.webp","c.webp"];
-
 let index = 0;
-
 const img = document.getElementById("slideImg");
-
 setInterval(() => {
-
 index = (index + 1) % images.length;
-
 img.src = images[index];
-
 },3000);
-
 </script>
 
 <div class="safe-bottom"></div>
@@ -158,8 +131,9 @@ var sc_security="4f7f8b9c";
 </script>
 
 <script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
+ src="https://www.statcounter.com/counter/counter.js"async>
+</script>
+
 
 <noscript>
 <div class="statcounter">
