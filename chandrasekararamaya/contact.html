@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="si-LK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
 <!-- temple header -->
 <div class="sub-band">
 
-<img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+<img src="../provinces/1.png" class="sub-band-icon" alt="Temple icon Sri Lanka">
 
 <div class="sub-band-text">
 <p id="templeSI">Loading...</p>
@@ -55,25 +55,25 @@ referrerpolicy="no-referrer-when-downgrade">
 
 <div class="contact-info">
 
-<p class="contact-row">
+<p class="contact-row" id="row-address">
 <span class="label en">Address:</span>
 <span class="label si">ලිපිනය:</span>
 <span class="value" id="contact-address"></span>
 </p>
 
-<p class="contact-row">
+<p class="contact-row" id="row-email">
 <span class="label en">Email:</span>
 <span class="label si">ඊ-තැපැල්:</span>
 <span class="value" id="contact-email"></span>
 </p>
 
-<p class="contact-row">
+<p class="contact-row" id="row-telephone">
 <span class="label en">Telephone:</span>
 <span class="label si">දුරකථන:</span>
 <a class="value" id="contact-telephone"></a>
 </p>
 
-<p class="contact-row">
+<p class="contact-row" id="row-website">
 <span class="label en">Website:</span>
 <span class="label si">වෙබ් අඩවිය:</span>
 <span class="value" id="contact-website"></span>
@@ -103,59 +103,67 @@ fetch("info.txt")
 const info = {};
 
 data.split("\n").forEach(line => {
-
 const parts = line.split("=");
-
 if(parts.length >= 2){
-
 const key = parts[0].trim();
 const value = parts.slice(1).join("=").trim();
 info[key] = value;
-
 }
-
 });
 
+/* ===== BASIC TEXT ===== */
 document.getElementById("templeSI").textContent = info.si || "";
 document.getElementById("templeEN").textContent = info.en || "";
 document.getElementById("templeVillage").textContent = info.village || "";
 
-/* SEO title */
-const newTitle = (info.en || "Temple") + " | Contact | Sri Lanka";
+/* ===== TITLE ===== */
+const newTitle = (info.en || "Temple") + " - Contact Details | Sri Lanka";
 document.title = newTitle;
 
-/* Meta description */
+/* ===== META DESCRIPTION ===== */
 document.getElementById("metaDescription")
 .setAttribute("content", info.desc || "");
 
-/* Map */
-if(info.map){
+/* ===== MAP ===== */
+if(info.map && info.map !== "-"){
 document.getElementById("contact-map").src = info.map;
+}else{
+document.getElementById("contact-map").style.display = "none";
 }
 
-/* Address */
-if(info.address){
+/* ===== ADDRESS ===== */
+if(info.address && info.address !== "-"){
 document.getElementById("contact-address").textContent = info.address;
+}else{
+document.getElementById("row-address").style.display = "none";
 }
 
-/* Email */
-if(info.email){
+/* ===== EMAIL ===== */
+if(info.email && info.email !== "-"){
 document.getElementById("contact-email").innerHTML =
 `<a href="mailto:${info.email}">${info.email}</a>`;
+}else{
+document.getElementById("row-email").style.display = "none";
 }
 
-/* Telephone */
-if(info.telephone){
-const tel = info.telephone.replace(/\s+/g,"");
-const el = document.getElementById("contact-telephone");
-el.textContent = info.telephone;
-el.href = "tel:" + tel;
+/* ===== TELEPHONE ===== */
+const tel = info.telephone || "-";
+const telEl = document.getElementById("contact-telephone");
+
+if(tel === "-" || tel.trim() === ""){
+document.getElementById("row-telephone").style.display = "none";
+}else{
+const cleanTel = tel.replace(/\s+/g,"");
+telEl.textContent = tel;
+telEl.href = "tel:" + cleanTel;
 }
 
-/* Website */
-if(info.website){
+/* ===== WEBSITE ===== */
+if(info.website && info.website !== "-"){
 document.getElementById("contact-website").innerHTML =
 `<a href="${info.website}" target="_blank" rel="noopener noreferrer">${info.website}</a>`;
+}else{
+document.getElementById("row-website").style.display = "none";
 }
 
 })
@@ -185,8 +193,6 @@ referrerpolicy="no-referrer-when-downgrade">
 </a>
 </div>
 </noscript>
-
-<!-- End Statcounter Code -->
 
 </body>
 </html>
