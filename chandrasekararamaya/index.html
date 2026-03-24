@@ -102,7 +102,15 @@ document.getElementById("templeEN").textContent = info.en || "";
 document.getElementById("abbot-info").textContent = info.abbot || "";
 document.querySelector(".event-note").textContent = info.note || "";
 document.querySelector(".event-note1").textContent = info.note1 || "";
+/* ===== TELEPHONE CONTROL ===== */
+const tel = info.telephone || "-";
+const telLink = document.querySelector('a[href^="tel:"]');
 
+if(tel === "-" || tel.trim() === ""){
+    telLink.style.display = "none"; // hide button
+}else{
+    telLink.href = "tel:" + tel;
+}
 /* ===== TITLE ===== */
 const newTitle = (info.en || "Temple") + " - " + (info.district || "") + " | Sri Lanka Buddhist Temple";
 document.title = newTitle;
