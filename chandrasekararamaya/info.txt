@@ -1,11 +1,11 @@
 si=චන්ද්‍රශේඛරාරාමය, ආනන්ද මෛත්‍රෙය මාවත, මහරගම
 en=Chandrasekararamaya Maharagama
-abbot= 
+abbot=- 
 address=චන්ද්‍රශේඛරාරාමය, ආනන්ද මෛත්‍රෙය මාවත, මහරගම
-telephone=+94
+telephone=-
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
-note= 
-district=colombo
+note=-
+district=Colombo
 map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29860.746982026205!2d79.92030060829124!3d6.833763611992168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25069b88cc805%3A0x946cd273d34676a8!2zU3JpIENoYW5kcmFzaGVraGFyYXJhbWEgVGVtcGxlIC0g4LeB4LeK4oCN4La74LeTIOC2oOC2seC3iuC2r-C3iuKAjeC2u-C3geC3muC2m-C2u-C3j-C2u-C3j-C2uCDgt4Dgt5Lgt4Tgt4_gtrvgt4Pgt4rgtq7gt4_gtrHgtro!5e0!3m2!1sen!2slk!4v1773075562115!5m2!1sen!2slk
 
 
