@@ -1,4 +1,3 @@
-id=t-0
 si=චන්ද්‍රශේඛරාරාමය, ආනන්ද මෛත්‍රෙය මාවත, මහරගම
 en=Chandrasekararamaya Maharagama
 abbot= 
