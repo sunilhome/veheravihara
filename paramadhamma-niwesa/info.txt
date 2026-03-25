@@ -2,7 +2,7 @@
 si=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය 
 en=Paramadhamma Niwesa Piriwen Viharaya
 abbot=ශාස්ත්‍රපති අධ්‍යා, ඩිප්, මුලු දිවයිනටම සාම විනිසුරු 
-address=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය 
+address=පරම ධම්ම නිවෙස පිරිවෙන් විහාරය, බොරලැස්ගමුව 
 telephone=+94 71 835 5363
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note=පූජ්‍ය පාද ගරු රොටුඹ නන්දාරාම නායක ස්වාමීන් වහන්සේ 
