@@ -1,0 +1,14 @@
+ 
+si=මහරගම ශ්‍රී විපශ්‍යාරාම පුරාණ මහා විහාරය
+en=Maharagama Sri Vipashyarama Purana Viharaya
+abbot= මහරගම ශ්‍රී විපශ්‍යාරාම පුරාණ මහා විහාරස්ථානයේ වර්තමාන විහාරාධිපති රාජකීය පණ්ඩිත ශාස්ත්‍රපති 
+address=ශ්‍රී විපශ්‍යාරාම විහාරය, 11 විපශ්‍යාරාම පාර, මහරගම 
+telephone=+94 71 858 9347
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=අති පූජ්‍ය මහකුබුක්වැව චන්දානන්ද ස්වමීන් වහන්සේ 
+note1=Most Venerable Mahakubukwewa Chandananda Thero, Royal Scholar
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126763.4722506076!2d79.85851089169643!3d6.847555826200484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2507730941b67%3A0xd01c4eaabf16df9b!2sSri%20Vipashyarama%20Purana%20Maha%20Viharaya%20(Puwakpitya%20Temple)!5e0!3m2!1sen!2slk!4v1774284572138!5m2!1sen!2slk
+
+
+
+
