@@ -1,0 +1,13 @@
+
+si=ඇරව්වල එගොඩවත්ත සිරි විජය නන්දනාරාම විහාරය
+en=Egodawththa Siri Vijayanandanaramaya
+abbot=ලුම්බිණී විද්‍යාලයේ ආචාර්ය ශාස්ත්‍රපති පණ්ඩිත 
+address= එගොඩවත්ත සිරි විජය නන්දනාරාම විහාරය, ඇරව්වල, පන්නිපිටිය    
+telephone=+94 71 663 8582
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note= පූජ්‍ය කලවානේ රතනසාර හිමි 
+note1=Venerable Kalawane Rathanasara Thero 
+map=https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63381.92795295759!2d79.89238151312524!3d6.846111624927544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sEgodawththa%20Siri%20Vijayanandanaramaya!5e0!3m2!1sen!2slk!4v1774631793812!5m2!1sen!2slk
+
+
+
