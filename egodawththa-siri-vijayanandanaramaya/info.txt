@@ -7,7 +7,6 @@ telephone=+94 71 663 8582
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
 note= පූජ්‍ය කලවානේ රතනසාර හිමි 
 note1=Venerable Kalawane Rathanasara Thero 
-map=https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63381.92795295759!2d79.89238151312524!3d6.846111624927544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sEgodawththa%20Siri%20Vijayanandanaramaya!5e0!3m2!1sen!2slk!4v1774631793812!5m2!1sen!2slk
-
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4611.552161650897!2d79.93613987563728!3d6.818182793179508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2501eff7e6ea1%3A0xe2539a6295635878!2sSiri%20Vijayanandanaramaya!5e1!3m2!1sen!2slk!4v1774636472564!5m2!1sen!2slk
 
 
