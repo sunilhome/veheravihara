@@ -109,6 +109,11 @@ fetch("info.txt")
     document.getElementById("contact-address").textContent = info.address || "";
     document.getElementById("contact-email").textContent = info.email || "";
     document.getElementById("contact-website").textContent = info.website || "";
+
+// Map
+if(info.map){
+  document.getElementById("contact-map").src = info.map;
+}
     const telEl = document.getElementById("contact-telephone");
     if(info.telephone){
       telEl.textContent = info.telephone;
