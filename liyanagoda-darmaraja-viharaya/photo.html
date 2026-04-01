@@ -1,147 +1,156 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="si-LK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Temple Photos</title>
-<meta name="description" id="metaDescription" content="">
+  <!-- Default Title -->
+  <title>Buddhist Temple Photos</title>
 
-<link rel="stylesheet" href="../provinces/new-style.css">
+  <!-- SEO -->
+  <meta name="description" id="metaDescription" content="Photos of Buddhist temples in Sri Lanka.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" id="canonicalLink" href="">
+
+  <!-- Open Graph -->
+  <meta property="og:title" id="ogTitle" content="Temple Photos Sri Lanka">
+  <meta property="og:description" id="ogDesc" content="Photos of Buddhist temples in Sri Lanka.">
+  <meta property="og:image" content="https://veheravihara.lk/your-folder/x.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:url" id="ogURL" content="https://veheravihara.lk/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Temple Photos Sri Lanka">
+  <meta name="twitter:description" content="Photos of Buddhist temples in Sri Lanka.">
+  <meta name="twitter:image" content="https://veheravihara.lk/your-folder/x.webp">
+
+  <link rel="stylesheet" href="../provinces/new-style.css">
 </head>
 
 <body>
 
-<!-- top band -->
+<!-- Top band -->
 <div class="top-band">
-<a href="javascript:history.back() g6tl" class="top-icon">&#8592;</a>
-<a href="/index.html" class="top-icon">&#127969;</a>
-<a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
-<a href="contact.html" class="top-icon top-mail">&#128233;</a>
+  <a href="index.html" class="top-icon">&#8592;</a>
+  <a href="/index.html" class="top-icon">&#127969;</a>
+  <a href="tel:+94766178102" class="top-icon">&#128222;</a>
+  <a href="contact.html" class="top-icon">&#128233;</a>
 </div>
 
-<!-- content -->
 <div class="content1">
 
-<!-- temple header -->
-<div class="sub-band">
-
-<img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
-
-<div class="sub-band-text">
-<p id="templeSI">Loading...</p>
-<p id="templeVillage"></p>
-</div>
-
-<div class="sub-band-text1">
-<p id="templeEN"></p>
-</div>
-
-</div>
-
-<!-- PHOTO GALLERY -->
-<div id="photo-gallery"></div>
-
-
-
-<footer>
-<div class="footer-content">
-© ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-සම්පත් රණසිංහ<br>
-දත්ත: ධනේශ් රණසිංහ
-</div>
+  <!-- Temple Name -->
+  <div class="sub-band">
+    <img src="../provinces/1.png" class="sub-band-icon" alt="Buddhist temple icon">
+    
+    <div class="sub-band-text">
+      <p id="templeSI"></p>
+    </div>
+    <div class="sub-band-text1">
+      <p id="templeEN"></p>
+    </div>
   </div>
-</footer>
 
-<!-- LOAD TEMPLE INFO -->
+  <!-- Photo Gallery -->
+  <div id="photo-gallery"></div>
+
+</div>
+
+<!-- Footer buttons -->
+  <footer>
+    <div class="footer-content">
+        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+        සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+        සම්පත් රණසිංහ<br>
+        දත්ත: ධනේශ් රණසිංහ
+    </div>
+  </footer>
+
+<!-- JS -->
 <script>
-
 fetch("info.txt")
 .then(res => res.text())
 .then(data => {
+    const info = {};
+    data.split("\n").forEach(line => {
+        const parts = line.split("=");
+        if(parts.length >= 2){
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
 
-const info = {};
+    // Temple names
+    document.getElementById("templeSI").textContent = info.si || "";
+    document.getElementById("templeEN").textContent = info.en || "";
 
-data.split("\n").forEach(line => {
+    // Title
+    const newTitle = (info.en || "Temple") + " | " + (info.si || "") + " | Sri Lanka";
+    document.title = newTitle + " | Photos";
 
-const parts = line.split("=");
+    // Description
+    let description = "Photos of " + (info.en || "Temple") + " in Sri Lanka.";
+    document.getElementById("metaDescription").setAttribute("content", description);
 
-if(parts.length >= 2){
+    // OG
+    document.getElementById("ogTitle").setAttribute("content", newTitle + " Photos");
+    document.getElementById("ogDesc").setAttribute("content", description);
 
-const key = parts[0].trim();
-const value = parts.slice(1).join("=").trim();
-info[key] = value;
-
-}
-
-});
-
-document.getElementById("templeSI").textContent = info.si || "";
-document.getElementById("templeEN").textContent = info.en || "";
-document.getElementById("templeVillage").textContent = info.village || "";
-
-const newTitle = (info.en || "Temple") + " | Photos | Sri Lanka";
-document.title = newTitle;
-
-document.getElementById("metaDescription")
-.setAttribute("content", info.desc || "");
+    // URL
+    const cleanURL = window.location.href.split("?")[0];
+    document.getElementById("canonicalLink").setAttribute("href", cleanURL);
+    document.getElementById("ogURL").setAttribute("content", cleanURL);
 
 })
-.catch(err => console.log("Info load error", err));
-
+.catch(err => console.error("Info load error:", err));
 </script>
 
-<!-- AUTO LOAD PHOTOS -->
+<!-- Auto image loader -->
 <script>
-
 let gallery = document.getElementById("photo-gallery");
-
 let i = 1;
 
 function loadNextImage(){
+    let img = new Image();
+    img.src = i + ".webp";
 
-let img = new Image();
-
-img.src = i + ".webp";
-
-img.className = "main-image";
-
-img.alt = "Buddhist Temple Photo";
-
-img.onload = function(){
-
-gallery.appendChild(img);
-
-i++;
-
-loadNextImage();
-
-};
-
+    img.onload = function(){
+        img.className = "main-image";
+        gallery.appendChild(img);
+        i++;
+        loadNextImage();
+    };
 }
 
 loadNextImage();
-
 </script>
-  <script type="text/javascript">
+<!-- StatCounter -->
+<script type="text/javascript">
 var sc_project=13209421; 
 var sc_invisible=1; 
 var sc_security="4f7f8b9c"; 
 </script>
+
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
+
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+<img class="statcounter"
 src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
 alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
-
+referrerpolicy="no-referrer-when-downgrade">
+</a>
+</div>
+</noscript>
+<!-- End StatCounter -->
 </body>
 </html>
-
-
-

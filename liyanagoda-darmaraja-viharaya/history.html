@@ -1,63 +1,100 @@
-     <!DOCTYPE html>
-<html lang="si">
+<!DOCTYPE html>
+<html lang="si-LK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--<meta name="theme-color" content="#000000">-->
-<title>Temple Page</title>
-<meta name="description" id="metaDescription" content="">
+
+<!-- Default Title -->
+<title>Buddhist Temple History</title>
+
+<!-- SEO -->
+<meta name="description" id="metaDescription" content="Sri Lanka Buddhist temple history and information.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" id="canonicalLink" href="">
+
+<!-- Open Graph -->
+<meta property="og:title" id="ogTitle" content="Temple History Sri Lanka">
+<meta property="og:description" id="ogDesc" content="Buddhist temple history in Sri Lanka.">
+<meta property="og:image" id="ogImage" content="">
+<meta property="og:type" content="website">
+<meta property="og:url" id="ogURL" content="">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="">
+<meta name="twitter:description" id="twDesc" content="">
+<meta name="twitter:image" id="twImage" content="">
 
 <link rel="stylesheet" href="../provinces/new-style.css">
-
 </head>
 
 <body>
 
-  <!-- top fixed band -->
+<!-- TOP BAND -->
 <div class="top-band">
   <a href="javascript:history.back()" class="top-icon">&#8592;</a>
   <a href="/index.html" class="top-icon">&#127969;</a>
-  <a href="tel:+94766178102" class="top-icon top-tele">&#128222;</a>
-<a href="contact.html" class="top-icon top-mail">&#128233;</a>
-</div> 
- 
-  <!-- content -->
-  <div class="content">
+  <a href="tel:+94766178102" class="top-icon">&#128222;</a>
+  <a href="contact.html" class="top-icon">&#128233;</a>
+</div>
 
-    <!-- full-width sub-band inside content -->
+<!-- CONTENT -->
+<div class="content">
+
 <div class="sub-band">
-  <!-- icon centered on top -->
-  <img src="../provinces/1.png" class="sub-band-icon" alt="Icon">
+  <img src="../provinces/1.png" class="sub-band-icon" alt="Buddhist temple icon">
 
-  <!-- Sinhala text below icon -->
   <div class="sub-band-text">
-    <p>ලියනගොඩ ධර්මරාජ විහාරය</p>
-    <p>පන්නිපිටිය</p>
+    <p id="templeSI"></p>
   </div>
   <div class="sub-band-text1">
-        <p>Liyanagoda Darmaraja Viharaya</p>
-      </div>
+    <p id="templeEN"></p>
+  </div>
+</div>
 
-</div>  
-
-    <!-- LANGUAGE BUTTONS -->
-    <div class="button-box">
-      <button class="action-btn" onclick="loadInfo('si')">සිංහල</button>
-      <button class="action-btn" onclick="loadInfo('en')">English</button>
-    </div>
+<!-- LANGUAGE BUTTONS -->
 <div class="button-box">
-  <button class="audio" onclick="toggleAudio('a1', this)">
-    🔊
-  </button>
+  <button class="action-btn" onclick="loadInfo('si')">සිංහල</button>
+  <button class="action-btn" onclick="loadInfo('en')">English</button>
+</div>
 
-  <button class="audio" onclick="toggleAudio('a2', this)">
-    🔊
-  </button>
+<!-- AUDIO -->
+<div class="button-box">
+  <button class="audio" onclick="toggleAudio('a1', this)">🔊</button>
+  <button class="audio" onclick="toggleAudio('a2', this)">🔊</button>
 </div>
 
 <audio id="a1" src="audio1.mp3"></audio>
 <audio id="a2" src="audio2.mp3"></audio>
 
+<!-- HISTORY CONTENT -->
+<div class="info-box">
+  <h2 id="history-title">ඉතිහාසය</h2>
+  <div id="temple-text">Loading...</div>
+</div>
+
+<!-- BACK -->
+<button class="back-btn" onclick="window.location.href='index.html'">
+  ← Back to Temple Main Page
+</button>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
+    සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
+    සම්පත් රණසිංහ<br>
+    දත්ත: ධනේශ් රණසිංහ
+  </div>
+</footer>
+
+<!-- AUDIO SCRIPT -->
 <script>
 let currentAudio = null;
 let currentBtn = null;
@@ -65,7 +102,6 @@ let currentBtn = null;
 function toggleAudio(id, btn) {
   const audio = document.getElementById(id);
 
-  // same button clicked → stop & reset
   if (currentAudio === audio && !audio.paused) {
     audio.pause();
     audio.currentTime = 0;
@@ -75,23 +111,18 @@ function toggleAudio(id, btn) {
     return;
   }
 
-  // stop previous audio
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
-  if (currentBtn) {
-    currentBtn.classList.remove('active');
-  }
+  if (currentBtn) currentBtn.classList.remove('active');
 
-  // play new audio
   audio.play();
   btn.classList.add('active');
 
   currentAudio = audio;
   currentBtn = btn;
 
-  // 🔹 RESET WHEN AUDIO ENDS
   audio.onended = function () {
     btn.classList.remove('active');
     currentAudio = null;
@@ -100,69 +131,114 @@ function toggleAudio(id, btn) {
 }
 </script>
 
-    <!-- CONTENT -->
-    <div class="info-box">
-      <h2 id="history-title">ඉතිහාසය</h2>
-      <div id="temple-text">Loading...</div>
-    </div>
+<!-- MAIN SEO + INFO SCRIPT -->
+<script>
+let templeName = "";
 
-    <!-- BACK -->
-    <button class="back-btn" onclick="window.location.href='index.html'">
-      ← Back to Temple Main Page
-    </button>
+fetch("info.txt")
+.then(res => res.text())
+.then(data => {
+    const info = {};
+    data.split("\n").forEach(line => {
+        const parts = line.split("=");
+        if(parts.length >= 2){
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
+        }
+    });
 
-  </div>
-<footer>
-    <div class="footer-content">
-        © ව්‍යාපෘතිය: සුනිල් රණසිංහ <br>
-         සංකල්පය: ශාසන සුභ සාධන දේශ කීර්ති ශ්‍රී දේශබන්දු<br>
-		සම්පත් රණසිංහ<br>
-        දත්ත: ධනේශ් රණසිංහ
-    </div>
-</footer>
+    // Temple names
+    document.getElementById("templeSI").textContent = info.si || "";
+    document.getElementById("templeEN").textContent = info.en || "";
 
-  <!-- SCRIPT -->
-  <script>
-    async function loadInfo(lang) {
-      const file = lang === 'si' ? 'info-si.txt' : 'info-en.txt';
-      const box = document.getElementById('temple-text');
-      const title = document.getElementById('history-title');
+    templeName = info.en || "Temple";
 
-      title.textContent = (lang === 'si') ? 'ඉතිහාසය' : 'History';
-      box.innerHTML = '';
+    // TITLE
+    const newTitle = templeName + " | " + (info.si || "") + " | Sri Lanka";
+    document.title = newTitle + " | History";
 
-      try {
-        const res = await fetch(file);
-        const text = await res.text();
+    // DESCRIPTION
+    let description = templeName + " history, Sri Lanka Buddhist temple information.";
+    document.getElementById("metaDescription").setAttribute("content", description);
 
-        text.split(/\r?\n\r?\n|\r?\n/).forEach(line => {
-          const t = line.trim();
-          if (!t) return;
+    // OG + TWITTER
+    document.getElementById("ogTitle").setAttribute("content", newTitle + " History");
+    document.getElementById("ogDesc").setAttribute("content", description);
+    document.getElementById("twTitle").setAttribute("content", newTitle + " History");
+    document.getElementById("twDesc").setAttribute("content", description);
 
-          if (t.startsWith('#')) {
-            const h3 = document.createElement('h3');
-            h3.textContent = t.substring(1).trim();
-            box.appendChild(h3);
-          } else {
-            const p = document.createElement('p');
-            p.textContent = t;
-            box.appendChild(p);
-          }
-        });
+    // IMAGE (same as index)
+    const imageURL = window.location.origin + window.location.pathname.replace("history.html","") + "x.webp";
+    document.getElementById("ogImage").setAttribute("content", imageURL);
+    document.getElementById("twImage").setAttribute("content", imageURL);
 
-      } catch {
-        box.textContent = 'Information not available.';
+    // URL
+    const cleanURL = window.location.href.split("?")[0];
+    document.getElementById("canonicalLink").setAttribute("href", cleanURL);
+    document.getElementById("ogURL").setAttribute("content", cleanURL);
+
+})
+.catch(err => console.error("Info load error:", err));
+</script>
+
+<!-- HISTORY LOAD SCRIPT -->
+<script>
+async function loadInfo(lang) {
+  const file = lang === 'si' ? 'info-si.txt' : 'info-en.txt';
+  const box = document.getElementById('temple-text');
+  const title = document.getElementById('history-title');
+
+  title.textContent = (lang === 'si') ? 'ඉතිහාසය' : 'History';
+  box.innerHTML = '';
+
+  try {
+    const res = await fetch(file);
+    const text = await res.text();
+
+    text.split(/\r?\n\r?\n|\r?\n/).forEach(line => {
+      const t = line.trim();
+      if (!t) return;
+
+      if (t.startsWith('#')) {
+        const h3 = document.createElement('h3');
+        h3.textContent = t.substring(1).trim();
+        box.appendChild(h3);
+      } else {
+        const p = document.createElement('p');
+        p.textContent = t;
+        box.appendChild(p);
       }
-    }
+    });
 
-    // initial load
-    loadInfo('si');
-  </script>
+  } catch {
+    box.textContent = 'Information not available.';
+  }
+}
 
+loadInfo('si');
+</script>
+<!-- StatCounter -->
+<script type="text/javascript">
+var sc_project=13209421; 
+var sc_invisible=1; 
+var sc_security="4f7f8b9c"; 
+</script>
+
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+<img class="statcounter"
+src="https://c.statcounter.com/13209421/0/4f7f8b9c/1/"
+alt="Web Analytics"
+referrerpolicy="no-referrer-when-downgrade">
+</a>
+</div>
+</noscript>
+<!-- End StatCounter -->
 </body>
-
 </html>
-
-
-
-

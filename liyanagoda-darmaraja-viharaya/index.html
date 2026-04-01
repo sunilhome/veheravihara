@@ -1,31 +1,33 @@
-
-
-<!DOCTYPE html>
-
-<html lang="si">
+ <!DOCTYPE html>
+<html  lang="si-LK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Temple Page</title>
+  <!-- Default Title (JS will update) -->
+  <title>Buddhist Temple Sri Lanka</title>
 
-<meta name="description" id="metaDescription" content="">
-<meta name="robots" content="index, follow">
+  <!-- SEO Meta -->
+  <meta name="description" id="metaDescription" content="Sri Lanka Buddhist temples with photos, history, and contact details.">
+  <meta name="robots" content="index, follow">
 
-<!-- Canonical URL -->
+  <!-- Canonical -->
+  <link rel="canonical" id="canonicalLink" href="">
 
-<link rel="canonical" id="canonicalLink" href="">
-
-<!-- Open Graph for Facebook / WhatsApp preview -->
-
-<meta property="og:title" content="Buddhist Temple | Sri Lanka">
-<meta property="og:description" content="Sri Lanka Buddhist temple information, photos and maps.">
-<meta property="og:image" content="https://veheravihara.lk/cover.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://veheravihara.lk">
-
-<link rel="stylesheet" href="../provinces/new-style.css">
-
+  <!-- Open Graph (Facebook) -->
+  <meta property="og:title" id="ogTitle" content="Buddhist Temple Sri Lanka">
+  <meta property="og:description" id="ogDesc" content="Sri Lanka Buddhist temple information, photos and maps.">
+ <meta property="og:image" content="https://veheravihara.lk/your-folder/x.webp">
+  <meta property="og:type" content="website">
+<meta property="og:url" id="ogURL" content="https://veheravihara.lk/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+  <link rel="stylesheet" href="../provinces/new-style.css">
+  
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Buddhist Temple Sri Lanka">
+<meta name="twitter:description" content="Sri Lanka Buddhist temple information">
+<meta name="twitter:image" content="https://veheravihara.lk/your-folder/x.webp">
 </head>
 <body>
 
@@ -59,7 +61,7 @@
   <img id="slideImg" src="a.webp" alt="Buddhist temple Sri Lanka">
 </div>
 
-<img src="x.webp" class="small-image" alt="Sri Lanka Buddhist temple">
+<img src="x.webp" class="small-image" alt="chief thero image">
 
 <div class="event-box">
   <div class="event-text">
@@ -86,7 +88,6 @@
         සම්පත් රණසිංහ<br>
         දත්ත: ධනේශ් රණසිංහ
     </div>
-
   </footer>
 
 <script>
@@ -103,31 +104,38 @@ fetch("info.txt")
         }
     });
 
-    // Update page content
+    // Content
     document.getElementById("templeSI").textContent = info.si || "";
     document.getElementById("templeEN").textContent = info.en || "";
     document.getElementById("abbot-info").textContent = info.abbot || "";
-    document.querySelector(".event-note").textContent = info.note || "";
-    document.querySelector(".event-note1").textContent = info.note1 || "";
+const noteEl = document.querySelector(".event-note");
+if(noteEl) noteEl.textContent = info.note || "";
 
-    // Update browser title
-    const newTitle = (info.en || "Temple") + " | Buddhist Temple | Sri Lanka";
+const noteEl1 = document.querySelector(".event-note1");
+if(noteEl1) noteEl1.textContent = info.note1 || "";
+    // Title
+	const newTitle = (info.en || "Temple") + " | " + (info.si || "") + " | Sri Lanka";
     document.title = newTitle;
 
-    // SEO meta description
+    // ✅ SEO Description (better version)
+    let description = info.desc || "";
     if(info.si && info.district){
-        const description = info.si + " " + info.district + " දිස්ත්‍රික්කයේ පිහිටි බෞද්ධ විහාරස්ථානයකි. ඉතිහාසය, ඡායාරූප සහ සිතියම veheravihara.lk";
-        document.getElementById("metaDescription").setAttribute("content", description);
+        description = info.si + " " + info.district + " දිස්ත්‍රික්කයේ පිහිටි බෞද්ධ විහාරස්ථානයකි. ඡායාරූප, ඉතිහාසය සහ සිතියම veheravihara.lk";
     }
+    document.getElementById("metaDescription").setAttribute("content", description);
 
-    // Canonical link (SEO duplicate protection)
-    const canonicalURL = window.location.href.split("?")[0];
-    document.getElementById("canonicalLink").setAttribute("href", canonicalURL);
+    // ✅ Open Graph (Facebook)
+    document.getElementById("ogTitle").setAttribute("content", newTitle);
+    document.getElementById("ogDesc").setAttribute("content", description);
+
+    // ✅ URL (important for Facebook + SEO)
+    const cleanURL = window.location.href.split("?")[0];
+    document.getElementById("canonicalLink").setAttribute("href", cleanURL);
+    document.getElementById("ogURL").setAttribute("content", cleanURL);
 
 })
 .catch(err => console.error("Info load error:", err));
 </script>
-
 <script>
   const images = ["a.webp", "b.webp", "c.webp"];
   let index = 0;
