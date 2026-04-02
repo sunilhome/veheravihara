@@ -1,0 +1,13 @@
+
+si=පිංහේන ශ්‍රී විජයතිලකාරාම විහාරස්ථානය 
+en=Pinhena Shri Vijayathilakarama Viharaya
+abbot=
+address=ශ්‍රී විජයතිලකාරාම විහාරස්ථානය, පිංහේන, පන්නිපිටිය
+telephone=+94 71 403 4630
+desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
+note=
+note1=Venerable 
+map=
+
+
+
