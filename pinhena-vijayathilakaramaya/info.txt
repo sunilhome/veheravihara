@@ -1,13 +1,13 @@
 
 si=පිංහේන ශ්‍රී විජයතිලකාරාම විහාරස්ථානය 
 en=Pinhena Shri Vijayathilakarama Viharaya
-abbot=
+abbot=ජයවර්ධනපුර විශ්වවිද්‍යාලයේ උපාධි අපේක්ශක සාරද ස්වාමීන්වහන්සේ
 address=ශ්‍රී විජයතිලකාරාම විහාරස්ථානය, පිංහේන, පන්නිපිටිය
 telephone=+94 71 403 4630
 desc=මහරගම xxxxxxx පිහිටxxxxxxxඉතිහාxxxxxබෞද්ධxxxxxxxxxxxxxxxxx 
-note=
-note1=Venerable 
-map=
+note=පූජ්‍ය සාරද ස්වාමීන්වහන්සේ
+note1=Venerable Saadha Nayaka Theo.
+map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.4838245003766!2d79.96138791106966!3d6.83244539313701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251e1f2318d1d%3A0x870bd17d1b02f97c!2sPinhena%20Sri%20Vijayatilakarama%20Temple!5e0!3m2!1sen!2slk!4v1775412250424!5m2!1sen!2slk
 
 
 
