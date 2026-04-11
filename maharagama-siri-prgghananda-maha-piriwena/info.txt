@@ -1,0 +1,11 @@
+si=මහරගම ශ්‍රී ප්‍රඥානන්ද මහ පිරිවෙන
+en=Maharagama Siri Praggnanda Maha Priwena
+district=කොළඹ
+img=https://veheravihara.lk/maharagama-siri-prgghananda-maha-piriwena/1.webp
+abbot=Chief Thero in 
+address= ශ්‍රී ප්‍රඥානන්ද මහ පිරිවෙන, මහරගම 
+telephone=+94 
+desc={si} බෞද්ධ විහාරස්ථානයකි. විහාරාධිපති, ඡායාරූප, ඉතිහාසය සහ සිතියම.
+note=
+note1=Venarable 
+map=
