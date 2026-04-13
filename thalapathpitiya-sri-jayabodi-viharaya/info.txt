@@ -8,3 +8,4 @@ telephone=+94
 desc={si} බෞද්ධ විහාරස්ථානයකි. විහාරාධිපති, ඡායාරූප, ඉතිහාසය සහ සිතියම.
 note=පූජ්‍ය වැලිගල්ලේ පඤ්ඤාලෝක හිමි 
 note1=Venarable Weligalle Pragnaloka Thero
+map=
