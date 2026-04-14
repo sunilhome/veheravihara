@@ -56,12 +56,13 @@ body {
 .content {
   margin-top: calc(var(--top-band-h) - 60px); 
   padding: 0;
-  background: black;
+  
 
 }               
 .content1{
   margin-top: calc(var(--top-band-h) - 60px); 
   padding: 0;
+    background: black;
 
 }               
 
