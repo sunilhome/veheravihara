@@ -15,10 +15,6 @@ body {
   background-image: url("white.jpg");
   padding-top: var(--top-band-h); /* push content below fixed top band */
 }
-body1 {
- background: black;
-  padding-top: var(--top-band-h); /* push content below fixed top band */
-}
 
 /* ===== SAFE BOTTOM AREA ===== */
 .safe-bottom {
