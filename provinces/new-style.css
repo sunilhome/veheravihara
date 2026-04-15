@@ -210,8 +210,10 @@ body {
 .main-image {
   display: block;
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 20px;   /* 👈 space between photos */
+  background: black;     /* 👈 ensures gap stays black */
 }
+
 .main-image1 {
   display: block;
   width: 100%;
