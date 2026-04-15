@@ -17,6 +17,41 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 3000);
     }
 
+    // ✅ PHOTO GALLERY (only for photo.html)
+    const gallery = document.getElementById("photo-gallery");
+    if (gallery) {
+        let i = 1;
+
+        function loadNextImage() {
+            let img = new Image();
+            img.src = i + ".webp";
+
+            img.onload = function () {
+                img.className = "main-image";
+
+                // Optional smooth fade-in
+                img.style.opacity = "0";
+                img.style.transition = "opacity 0.6s ease";
+
+                gallery.appendChild(img);
+
+                setTimeout(() => {
+                    img.style.opacity = "1";
+                }, 50);
+
+                i++;
+                loadNextImage();
+            };
+
+            // ✅ Stop when no more images
+            img.onerror = function () {
+                console.log("No more images after:", i - 1);
+            };
+        }
+
+        loadNextImage();
+    }
+
     // ✅ Load info.txt
     fetch("info.txt")
     .then(res => res.text())
@@ -58,7 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (info.map) {
                 mapFrame.src = info.map.trim();
             } else {
-                mapFrame.style.display = "none"; // hide if no map
+                mapFrame.style.display = "none";
             }
         }
 
