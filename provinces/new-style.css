@@ -119,6 +119,7 @@ body {
 }
 #photo-gallery {
   padding-bottom: 30px;
+  background: black;
 }
 /* ===== SLIDESHOW ===== */
 .slideshow {
