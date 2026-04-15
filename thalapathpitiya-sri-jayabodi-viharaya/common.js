@@ -189,3 +189,46 @@ function toggleAudio(id, btn) {
         currentBtn = null;
     };
 }
+// ✅ HISTORY / TEXT LOADER (GLOBAL FUNCTION)
+async function loadInfo(lang) {
+
+    const file = (lang === 'si') ? 'info-si.txt' : 'info-en.txt';
+
+    const box = document.getElementById('temple-text');
+    const title = document.getElementById('history-title');
+
+    if (!box || !title) return;
+
+    title.textContent = (lang === 'si') ? 'ඉතිහාසය' : 'History';
+    box.innerHTML = '';
+
+    try {
+        const res = await fetch(file);
+        const text = await res.text();
+
+        text.split(/\n\n+/).forEach(block => {
+
+            block = block.trim();
+            if (!block) return;
+
+            if (block.startsWith('#')) {
+                const h = document.createElement('h3');
+                h.textContent = block.substring(1);
+                box.appendChild(h);
+            } else {
+                const p = document.createElement('p');
+                p.textContent = block;
+                box.appendChild(p);
+            }
+
+        });
+
+    } catch {
+        box.textContent = "Information not available.";
+    }
+}
+
+// ✅ DEFAULT LOAD (ONLY IF HISTORY PAGE)
+if (document.getElementById('temple-text')) {
+    loadInfo('si');
+}
