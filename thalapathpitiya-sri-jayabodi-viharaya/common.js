@@ -74,10 +74,31 @@ window.addEventListener("DOMContentLoaded", () => {
         if (enEl) enEl.textContent = info.en || "";
 
         // ✅ Address + Telephone
-        const addressEl = document.getElementById("address");
-        const telEl = document.getElementById("telephone");
-        if (addressEl) addressEl.textContent = info.address || "";
-        if (telEl) telEl.textContent = info.telephone || "";
+    // ✅ Contact Page Fields
+const addressEl = document.getElementById("contact-address");
+const emailEl = document.getElementById("contact-email");
+const telEl = document.getElementById("contact-telephone");
+const webEl = document.getElementById("contact-website");
+
+if (addressEl) addressEl.textContent = info.address || "";
+if (emailEl) emailEl.textContent = info.email || "";
+
+// Telephone clickable
+if (telEl) {
+    if (info.telephone) {
+        telEl.textContent = info.telephone;
+        telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
+    } else {
+        telEl.style.display = "none";
+    }
+}
+
+// Website clickable
+if (webEl) {
+    if (info.website) {
+        webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
+    }
+}
 
         // ✅ Abbot + notes
         const abbotEl = document.getElementById("abbot-info");
