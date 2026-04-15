@@ -55,47 +55,6 @@
 <audio id="a1" src="audio1.mp3"></audio>
 <audio id="a2" src="audio2.mp3"></audio>
 
-<script>
-let currentAudio = null;
-let currentBtn = null;
-
-function toggleAudio(id, btn) {
-  const audio = document.getElementById(id);
-
-  // same button clicked → stop & reset
-  if (currentAudio === audio && !audio.paused) {
-    audio.pause();
-    audio.currentTime = 0;
-    btn.classList.remove('active');
-    currentAudio = null;
-    currentBtn = null;
-    return;
-  }
-
-  // stop previous audio
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  if (currentBtn) {
-    currentBtn.classList.remove('active');
-  }
-
-  // play new audio
-  audio.play();
-  btn.classList.add('active');
-
-  currentAudio = audio;
-  currentBtn = btn;
-
-  // 🔹 RESET WHEN AUDIO ENDS
-  audio.onended = function () {
-    btn.classList.remove('active');
-    currentAudio = null;
-    currentBtn = null;
-  };
-}
-</script>
 
     <!-- CONTENT -->
     <div class="info-box">
