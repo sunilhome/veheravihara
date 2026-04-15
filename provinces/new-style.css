@@ -117,7 +117,9 @@ body {
   margin-top: 4px;     /* fine-tuned top */
   margin-bottom: 8px;  /* space between lines */
 }
-
+#photo-gallery {
+  padding-bottom: 30px;
+}
 /* ===== SLIDESHOW ===== */
 .slideshow {
   width: 100%;
