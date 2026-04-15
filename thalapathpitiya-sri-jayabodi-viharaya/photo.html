@@ -57,24 +57,6 @@
 <script src="common.js"></script>
 
 <!-- PHOTO LOADER (kept ONLY here) -->
-<script>
-let gallery = document.getElementById("photo-gallery");
-let i = 1;
-
-function loadNextImage(){
-    let img = new Image();
-    img.src = i + ".webp";
-
-    img.onload = function(){
-        img.className = "main-image";
-        gallery.appendChild(img);
-        i++;
-        loadNextImage();
-    };
-}
-
-loadNextImage();
-</script>
 
 <!-- StatCounter (optional keep) -->
 <script type="text/javascript">
