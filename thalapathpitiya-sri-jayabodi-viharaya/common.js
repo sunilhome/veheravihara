@@ -59,7 +59,40 @@ window.addEventListener("DOMContentLoaded", () => {
 })
     .then(res => res.text())
     .then(data => {
+const addressEl = document.getElementById("contact-address");
+const emailEl = document.getElementById("contact-email");
+const telEl = document.getElementById("contact-telephone");
+const webEl = document.getElementById("contact-website");
 
+if (addressEl) addressEl.textContent = info.address || "";
+if (emailEl) emailEl.textContent = info.email || "";
+
+if (telEl) {
+    if (info.telephone) {
+        telEl.textContent = info.telephone;
+        telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
+    } else {
+        telEl.style.display = "none";
+    }
+}
+
+if (webEl) {
+    if (info.website) {
+        webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
+    } else {
+        webEl.textContent = "";
+    }
+}
+
+// ✅ MAP
+const mapFrame = document.getElementById("mapFrame");
+if (mapFrame) {
+    if (info.map) {
+        mapFrame.src = info.map.trim();
+    } else {
+        mapFrame.style.display = "none";
+    }
+}
         const info = {};
         data.split(/\r?\n/).forEach(line => {
             const parts = line.split("=");
