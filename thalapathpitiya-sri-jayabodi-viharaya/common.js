@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ✅ Load info.txt
-    fetch("info.txt")
+    fetch("./info.txt")
     .then(res => res.text())
     .then(data => {
 
