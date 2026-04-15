@@ -51,54 +51,56 @@ window.addEventListener("DOMContentLoaded", () => {
         loadNextImage();
     }
 
-    // ✅ Load info.txt
-// ✅ Load info.txt
+// ✅ LOAD info.txt (CLEAN VERSION)
 fetch("info.txt", { cache: "no-store" })
-.then(res => res.text())
-.then(data => {
+.then(res => {
+    if (!res.ok) throw new Error("info.txt not found");
+    return res.text();
+})
+.then(text => {
 
     const info = {};
 
-    data.split(/\r?\n/).forEach(line => {
+    text.split(/\r?\n/).forEach(line => {
         const parts = line.split("=");
-        if (parts.length >= 2) {
-            const key = parts[0].trim();
-            const value = parts.slice(1).join("=").trim();
-            info[key] = value;
-        }
+        if (parts.length < 2) return;
+
+        const key = parts[0].trim();
+        const value = parts.slice(1).join("=").trim();
+        info[key] = value;
     });
 
-    // ✅ TEMPLE NAME
+    // ✅ DEBUG (IMPORTANT)
+    console.log("INFO LOADED:", info);
+
+    // ======================
+    // TEMPLE NAME (ALL PAGES)
+    // ======================
     const siEl = document.getElementById("templeSI");
     const enEl = document.getElementById("templeEN");
     const villageEl = document.getElementById("templeVillage");
 
-    if (siEl) siEl.textContent = info.si || "";
-    if (enEl) enEl.textContent = info.en || "";
+    if (siEl) siEl.textContent = info.si || "NO SI NAME";
+    if (enEl) enEl.textContent = info.en || "NO EN NAME";
     if (villageEl) villageEl.textContent = info.village || "";
 
-    // ✅ PAGE TITLE + META
-    const pageTitle = `${info.en || "Temple"} | ${info.si || ""} | Sri Lanka`;
-    document.title = pageTitle;
-
-    const metaDesc = document.getElementById("metaDescription");
-    if (metaDesc) metaDesc.setAttribute("content", info.desc || "");
-
-    // ✅ CONTACT PAGE DATA
+    // ======================
+    // CONTACT PAGE ONLY
+    // ======================
     const addressEl = document.getElementById("contact-address");
     const emailEl = document.getElementById("contact-email");
     const telEl = document.getElementById("contact-telephone");
     const webEl = document.getElementById("contact-website");
 
-    if (addressEl) addressEl.textContent = info.address || "";
-    if (emailEl) emailEl.textContent = info.email || "";
+    if (addressEl) addressEl.textContent = info.address || "NO ADDRESS";
+    if (emailEl) emailEl.textContent = info.email || "NO EMAIL";
 
     if (telEl) {
         if (info.telephone) {
             telEl.textContent = info.telephone;
             telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
         } else {
-            telEl.style.display = "none";
+            telEl.textContent = "NO PHONE";
         }
     }
 
@@ -106,23 +108,27 @@ fetch("info.txt", { cache: "no-store" })
         if (info.website) {
             webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
         } else {
-            webEl.textContent = "";
+            webEl.textContent = "NO WEBSITE";
         }
     }
 
-    // ✅ MAP
+    // ======================
+    // MAP
+    // ======================
     const mapFrame = document.getElementById("mapFrame");
-    if (mapFrame) {
-        if (info.map) {
-            mapFrame.src = info.map.trim();
-        } else {
-            mapFrame.style.display = "none";
-        }
+    if (mapFrame && info.map) {
+        mapFrame.src = info.map;
     }
+
+    // ======================
+    // TITLE
+    // ======================
+    document.title = `${info.en || "Temple"} | ${info.si || ""}`;
 
 })
-.catch(err => console.log("info.txt error:", err));
-    // ✅ DEFAULT HISTORY LOAD
+.catch(err => {
+    console.log("❌ INFO LOAD ERROR:", err);
+});    // ✅ DEFAULT HISTORY LOAD
     if (document.getElementById('temple-text')) {
         loadInfo('si');
     }
