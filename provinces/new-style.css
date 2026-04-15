@@ -211,7 +211,7 @@ body {
 .main-image {
   display: block;
   width: 100%;
-  margin-bottom: 35px;   /* 👈 space between photos */
+  margin-bottom: 55px;   /* 👈 space between photos */
   background: black;     /* 👈 ensures gap stays black */
 }
 
