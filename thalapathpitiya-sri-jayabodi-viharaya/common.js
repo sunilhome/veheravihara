@@ -53,6 +53,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ✅ Load info.txt
     fetch("info.txt", { cache: "no-store" })
+.then(res => {
+    console.log("Fetch status:", res.status);
+    return res.text();
+})
     .then(res => res.text())
     .then(data => {
 
