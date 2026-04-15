@@ -52,76 +52,76 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ✅ Load info.txt
-    fetch("info.txt", { cache: "no-store" })
-.then(res => {
-    console.log("Fetch status:", res.status);
-    return res.text();
-})
-    .then(res => res.text())
-    .then(data => {
-const addressEl = document.getElementById("contact-address");
-const emailEl = document.getElementById("contact-email");
-const telEl = document.getElementById("contact-telephone");
-const webEl = document.getElementById("contact-website");
+// ✅ Load info.txt
+fetch("info.txt", { cache: "no-store" })
+.then(res => res.text())
+.then(data => {
 
-if (addressEl) addressEl.textContent = info.address || "";
-if (emailEl) emailEl.textContent = info.email || "";
+    const info = {};
 
-if (telEl) {
-    if (info.telephone) {
-        telEl.textContent = info.telephone;
-        telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
-    } else {
-        telEl.style.display = "none";
-    }
-}
-
-if (webEl) {
-    if (info.website) {
-        webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
-    } else {
-        webEl.textContent = "";
-    }
-}
-
-// ✅ MAP
-const mapFrame = document.getElementById("mapFrame");
-if (mapFrame) {
-    if (info.map) {
-        mapFrame.src = info.map.trim();
-    } else {
-        mapFrame.style.display = "none";
-    }
-}
-        const info = {};
-        data.split(/\r?\n/).forEach(line => {
-            const parts = line.split("=");
-            if (parts.length >= 2) {
-                const key = parts[0].trim();
-                const value = parts.slice(1).join("=").trim();
-                info[key] = value;
-            }
-        });
-
-        const siEl = document.getElementById("templeSI");
-        const enEl = document.getElementById("templeEN");
-        const villageEl = document.getElementById("templeVillage");
-
-        if (siEl) siEl.textContent = info.si || "";
-        if (enEl) enEl.textContent = info.en || "";
-        if (villageEl) villageEl.textContent = info.village || "";
-
-        const pageTitle = `${info.en || "Temple"} | ${info.si || ""} | Sri Lanka`;
-        document.title = pageTitle;
-
-        const metaDesc = document.getElementById("metaDescription");
-        if (metaDesc) {
-            metaDesc.setAttribute("content", info.desc || "");
+    data.split(/\r?\n/).forEach(line => {
+        const parts = line.split("=");
+        if (parts.length >= 2) {
+            const key = parts[0].trim();
+            const value = parts.slice(1).join("=").trim();
+            info[key] = value;
         }
+    });
 
-    })
-    .catch(err => console.log("info.txt error:", err));
+    // ✅ TEMPLE NAME
+    const siEl = document.getElementById("templeSI");
+    const enEl = document.getElementById("templeEN");
+    const villageEl = document.getElementById("templeVillage");
 
+    if (siEl) siEl.textContent = info.si || "";
+    if (enEl) enEl.textContent = info.en || "";
+    if (villageEl) villageEl.textContent = info.village || "";
+
+    // ✅ PAGE TITLE + META
+    const pageTitle = `${info.en || "Temple"} | ${info.si || ""} | Sri Lanka`;
+    document.title = pageTitle;
+
+    const metaDesc = document.getElementById("metaDescription");
+    if (metaDesc) metaDesc.setAttribute("content", info.desc || "");
+
+    // ✅ CONTACT PAGE DATA
+    const addressEl = document.getElementById("contact-address");
+    const emailEl = document.getElementById("contact-email");
+    const telEl = document.getElementById("contact-telephone");
+    const webEl = document.getElementById("contact-website");
+
+    if (addressEl) addressEl.textContent = info.address || "";
+    if (emailEl) emailEl.textContent = info.email || "";
+
+    if (telEl) {
+        if (info.telephone) {
+            telEl.textContent = info.telephone;
+            telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
+        } else {
+            telEl.style.display = "none";
+        }
+    }
+
+    if (webEl) {
+        if (info.website) {
+            webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
+        } else {
+            webEl.textContent = "";
+        }
+    }
+
+    // ✅ MAP
+    const mapFrame = document.getElementById("mapFrame");
+    if (mapFrame) {
+        if (info.map) {
+            mapFrame.src = info.map.trim();
+        } else {
+            mapFrame.style.display = "none";
+        }
+    }
+
+})
+.catch(err => console.log("info.txt error:", err));
     // ✅ DEFAULT HISTORY LOAD
     if (document.getElementById('temple-text')) {
         loadInfo('si');
