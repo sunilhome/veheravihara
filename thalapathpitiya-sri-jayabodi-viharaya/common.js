@@ -209,3 +209,20 @@ async function loadInfo(lang) {
         box.textContent = "Information not available.";
     }
 }
+
+// ==============================
+// ✅ STATCOUNTER (ALL PAGES)
+// ==============================
+window.addEventListener("DOMContentLoaded", function () {
+
+    window.sc_project = 13209421;
+    window.sc_invisible = 1;
+    window.sc_security = "4f7f8b9c";
+
+    var sc = document.createElement("script");
+    sc.src = "https://www.statcounter.com/counter/counter.js";
+    sc.async = true;
+
+    document.body.appendChild(sc);
+
+});
