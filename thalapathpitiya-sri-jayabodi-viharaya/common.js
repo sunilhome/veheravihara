@@ -135,6 +135,18 @@ fetch("info.txt", { cache: "no-store" })
 
 });
 
+// ======================
+// DESCRIPTION (SEO)
+// ======================
+const descEl = document.querySelector('meta[name="description"]');
+
+if (descEl) {
+    let descText = info.desc || "";
+    // replace {si} with Sinhala temple name
+    descText = descText.replace("{si}", info.si || "");
+   descEl.content = descText;
+}
+
 // ✅ AUDIO CONTROL
 function toggleAudio(id, btn) {
     const audio = document.getElementById(id);
