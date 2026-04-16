@@ -123,7 +123,7 @@ fetch("info.txt", { cache: "no-store" })
     // ======================
     // TITLE
     // ======================
-    document.title = `${info.en || "Temple"} | ${info.si || ""}`;
+    document.title = `${info.en || "Temple"} | ${info.si || ""} | Sri Lanka`;
 
 })
 .catch(err => {
