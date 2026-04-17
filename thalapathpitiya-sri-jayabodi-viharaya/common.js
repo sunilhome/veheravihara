@@ -147,9 +147,9 @@ window.addEventListener("DOMContentLoaded", () => {
             const descEl = document.querySelector('meta[name="description"]');
 
             if (descEl) {
-                const desc = (lang === "si")
-                    ? (info.description_si || "")
-                    : (info.description_en || "");
+               const desc = (lang === "si")
+    ? ((info.name_si || "") + " - " + (info.description_si || ""))
+    : ((info.name_en || "") + " - " + (info.description_en || ""));
 
                 descEl.content = desc;
             }
