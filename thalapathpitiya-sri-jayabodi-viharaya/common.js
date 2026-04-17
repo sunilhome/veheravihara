@@ -1,5 +1,5 @@
 // common.js
-
+console.log("NEW COMMON.JS LOADED");
 let currentAudio = null;
 let currentBtn = null;
 
