@@ -136,11 +136,13 @@ window.addEventListener("DOMContentLoaded", () => {
             // ======================
             // TITLE
             // ======================
-            const title = (lang === "si")
-                ? (info.name_si || "Temple")
-                : (info.name_en || "Temple");
+           const title =
+    (info.name_si || "Temple") +
+    " | " +
+    (info.name_en || "") +
+    " | Sri Lanka";
 
-            document.title = title + " | Sri Lanka";
+document.title = title;
 
             // ======================
             // META DESCRIPTION (SEO)
