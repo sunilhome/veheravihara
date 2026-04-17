@@ -1,5 +1,6 @@
 // common.js
 console.log("NEW COMMON.JS LOADED");
+
 let currentAudio = null;
 let currentBtn = null;
 
@@ -9,7 +10,7 @@ let lang = "si";
 window.addEventListener("DOMContentLoaded", () => {
 
     // ======================
-    // SLIDESHOW (index.html only)
+    // SLIDESHOW
     // ======================
     const slideImg = document.getElementById("slideImg");
     if (slideImg) {
@@ -66,105 +67,111 @@ window.addEventListener("DOMContentLoaded", () => {
             if (!res.ok) throw new Error("info.txt not found");
             return res.text();
         })
-  .then(text => {
+        .then(text => {
 
-    const info = {};
+            const info = {};
 
-    text.split(/\r?\n/).forEach(line => {
-        const parts = line.split("=");
-        if (parts.length < 2) return;
+            text.split(/\r?\n/).forEach(line => {
+                const parts = line.split("=");
+                if (parts.length < 2) return;
 
-        const key = parts[0].trim();
-        const value = parts.slice(1).join("=").trim();
-        info[key] = value;
-    });
+                const key = parts[0].trim();
+                const value = parts.slice(1).join("=").trim();
+                info[key] = value;
+            });
 
-    console.log("INFO LOADED:", info);
+            console.log("INFO LOADED:", info);
 
-    // ======================
-    // TEMPLE NAME
-    // ======================
-    const siEl = document.getElementById("templeSI");
-    const enEl = document.getElementById("templeEN");
+            // ======================
+            // TEMPLE NAME
+            // ======================
+            const siEl = document.getElementById("templeSI");
+            const enEl = document.getElementById("templeEN");
 
-    if (siEl) siEl.textContent = info.name_si || "NO SI NAME";
-    if (enEl) siEl.textContent = info.name_en || "NO EN NAME";
+            if (siEl) siEl.textContent = info.name_si || "NO SI NAME";
+            if (enEl) enEl.textContent = info.name_en || "NO EN NAME";
 
-    // ======================
-    // CONTACT PAGE
-    // ======================
-    const addressEl = document.getElementById("contact-address");
-    const emailEl = document.getElementById("contact-email");
-    const telEl = document.getElementById("contact-telephone");
-    const webEl = document.getElementById("contact-website");
+            // ======================
+            // CONTACT PAGE
+            // ======================
+            const addressEl = document.getElementById("contact-address");
+            const emailEl = document.getElementById("contact-email");
+            const telEl = document.getElementById("contact-telephone");
+            const webEl = document.getElementById("contact-website");
 
-    if (addressEl) {
-        addressEl.textContent =
-            (lang === "si") ? (info.address_si || "") : (info.address_en || "");
-    }
+            if (addressEl) {
+                addressEl.textContent =
+                    (lang === "si") ? (info.address_si || "") : (info.address_en || "");
+            }
 
-    if (emailEl) {
-        emailEl.textContent = info.email || "NO EMAIL";
-    }
+            if (emailEl) {
+                emailEl.textContent = info.email || "NO EMAIL";
+            }
 
-    if (telEl) {
-        if (info.telephone) {
-            telEl.textContent = info.telephone;
-            telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
-        } else {
-            telEl.textContent = "NO PHONE";
-        }
-    }
+            if (telEl) {
+                if (info.telephone) {
+                    telEl.textContent = info.telephone;
+                    telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
+                } else {
+                    telEl.textContent = "NO PHONE";
+                }
+            }
 
-    if (webEl) {
-        if (info.website) {
-            webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
-        } else {
-            webEl.textContent = "NO WEBSITE";
-        }
-    }
+            if (webEl) {
+                if (info.website) {
+                    webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
+                } else {
+                    webEl.textContent = "NO WEBSITE";
+                }
+            }
 
-    // ======================
-    // MAP
-    // ======================
-    const mapFrame = document.getElementById("mapFrame");
-    if (mapFrame && info.map_embed) {
-        mapFrame.src = info.map_embed;
-    }
+            // ======================
+            // MAP
+            // ======================
+            const mapFrame = document.getElementById("mapFrame");
+            if (mapFrame && info.map_embed) {
+                mapFrame.src = info.map_embed;
+            }
 
-    // ======================
-    // TITLE
-    // ======================
-    const title = (lang === "si")
-        ? (info.name_si || "Temple")
-        : (info.name_en || "Temple");
+            // ======================
+            // TITLE
+            // ======================
+            const title = (lang === "si")
+                ? (info.name_si || "Temple")
+                : (info.name_en || "Temple");
 
-    document.title = title + " | Sri Lanka";
+            document.title = title + " | Sri Lanka";
 
-    // ======================
-    // META DESCRIPTION (SEO)
-    // ======================
-    const descEl = document.querySelector('meta[name="description"]');
+            // ======================
+            // META DESCRIPTION (SEO)
+            // ======================
+            const descEl = document.querySelector('meta[name="description"]');
 
-    if (descEl) {
+            if (descEl) {
 
-        const desc = (lang === "si")
-            ? ((info.name_si || "") + " - " + (info.district_si || "") + " ප්‍රදේශයේ " + (info.description_si || ""))
-            : ((info.name_en || "") + " - Located in " + (info.district_en || "") + ". " + (info.description_en || ""));
+                const desc = (lang === "si")
+                    ? ((info.name_si || "") + " - " + (info.district_si || "") + " ප්‍රදේශයේ " + (info.description_si || ""))
+                    : ((info.name_en || "") + " - Located in " + (info.district_en || "") + ". " + (info.description_en || ""));
 
-        console.log("META DESC:", desc);
+                console.log("META DESC:", desc);
 
-        descEl.content = desc;
-    }
+                descEl.content = desc;
+            }
 
-    // ======================
-    // DEFAULT HISTORY LOAD
-    // ======================
-    if (document.getElementById('temple-text')) {
-        loadInfo('si');
-    }
+            // ======================
+            // DEFAULT HISTORY LOAD
+            // ======================
+            if (document.getElementById('temple-text')) {
+                loadInfo('si');
+            }
+
+        })
+        .catch(err => {
+            console.log("❌ INFO LOAD ERROR:", err);
+        });
 
 });
+
 // ======================
 // AUDIO CONTROL
 // ======================
@@ -204,7 +211,7 @@ function toggleAudio(id, btn) {
 }
 
 // ======================
-// HISTORY / TEXT LOADER
+// HISTORY LOADER
 // ======================
 async function loadInfo(langParam) {
 
@@ -245,7 +252,7 @@ async function loadInfo(langParam) {
 }
 
 // ==============================
-// STATCOUNTER (ALL PAGES)
+// STATCOUNTER
 // ==============================
 window.addEventListener("DOMContentLoaded", function () {
 
