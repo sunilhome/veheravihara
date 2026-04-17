@@ -144,20 +144,18 @@ window.addEventListener("DOMContentLoaded", () => {
             // ======================
             // META DESCRIPTION (SEO)
             // ======================
-            const descEl = document.querySelector('meta[name="description"]');
+    const descEl = document.querySelector('meta[name="description"]');
 
-            if (descEl) {
-               const desc = (lang === "si")
-    ? ((info.name_si || "") + " - " + (info.description_si || ""))
-    : ((info.name_en || "") + " - " + (info.description_en || ""));
+if (descEl) {
 
-                descEl.content = desc;
-            }
+    const desc = (lang === "si")
+        ? ((info.name_si || "") + " - " + (info.district_si || "") + " ප්‍රදේශයේ " + (info.description_si || ""))
+        : ((info.name_en || "") + " - Located in " + (info.district_en || "") + ". " + (info.description_en || ""));
 
-        })
-        .catch(err => {
-            console.log("❌ INFO LOAD ERROR:", err);
-        });
+    console.log("META DESC:", desc); // 👈 ADD THIS
+
+    descEl.content = desc;
+}
 
     // ======================
     // DEFAULT HISTORY LOAD
