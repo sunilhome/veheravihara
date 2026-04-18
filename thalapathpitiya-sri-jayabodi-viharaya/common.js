@@ -154,13 +154,33 @@ if (noteENEl) {
             // ======================
             // TITLE
             // ======================
-           const title =
+// ======================
+// TITLE (PAGE BASED)
+// ======================
+let page = window.location.pathname.toLowerCase();
+
+let baseTitle =
     (info.name_si || "Temple") +
     " | " +
     (info.name_en || "") +
     " | Sri Lanka";
 
-document.title = title;
+if (page.includes("photo")) {
+    document.title =
+        (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | Photos | Sri Lanka";
+}
+else if (page.includes("history")) {
+    document.title = baseTitle + " | History";
+}
+else if (page.includes("contact") || page.includes("map")) {
+    document.title = baseTitle + " | Contact";
+}
+else {
+    document.title = baseTitle;
+}
 
             // ======================
             // META DESCRIPTION (SEO)
