@@ -126,14 +126,18 @@ if (noteENEl) {
                 emailEl.textContent = info.email || "NO EMAIL";
             }
 
-            if (telEl) {
-                if (info.telephone) {
-                    telEl.textContent = info.telephone;
-                    telEl.href = "tel:" + info.telephone.replace(/\s+/g, "");
-                } else {
-                    telEl.textContent = "NO PHONE";
-                }
-            }
+       if (telEl) {
+    if (info.telephone) {
+        const phone = info.telephone.replace(/\s+/g, "");
+        telEl.textContent = info.telephone;
+        telEl.href = "tel:" + phone;
+        telEl.style.pointerEvents = "auto";
+    } else {
+        telEl.textContent = "NO PHONE";
+        telEl.removeAttribute("href");
+        telEl.style.pointerEvents = "none";
+    }
+}
 
             if (webEl) {
                 if (info.website) {
