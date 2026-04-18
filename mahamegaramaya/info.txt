@@ -21,7 +21,7 @@ description_en=A Buddhist temple. Incumbent, photos, history and map.
 note_si=පූජ්‍ය අංකුඹුරේ අමරවංශ නාහිමි.
 note_en=Venerable Ankumbure Amaravansa Thero.
 
-map=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5276.704876510461!2d79.92659697609518!3d6.842892819367097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25071eb77e259%3A0x7dfef576c91474d0!2sMahamegaramaya!5e1!3m2!1sen!2slk!4v1776524380851!5m2!1sen!2slk
+map_embed=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5276.704876510461!2d79.92659697609518!3d6.842892819367097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25071eb77e259%3A0x7dfef576c91474d0!2sMahamegaramaya!5e1!3m2!1sen!2slk!4v1776524380851!5m2!1sen!2slk
 
 
 
