@@ -85,6 +85,24 @@ window.addEventListener("DOMContentLoaded", () => {
             // ======================
             // TEMPLE NAME
             // ======================
+            // ======================
+// ABBOT + NAMES
+// ======================
+const abbotEl = document.getElementById("abbot-info");
+const noteSIEl = document.getElementById("note-si");
+const noteENEl = document.getElementById("note-en");
+
+if (abbotEl) {
+    abbotEl.textContent = info.abbot || "";
+}
+
+if (noteSIEl) {
+    noteSIEl.textContent = info.note_si || "";
+}
+
+if (noteENEl) {
+    noteENEl.textContent = info.note_en || "";
+}
             const siEl = document.getElementById("templeSI");
             const enEl = document.getElementById("templeEN");
 
