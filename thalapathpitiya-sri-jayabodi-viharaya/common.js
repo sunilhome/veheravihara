@@ -173,10 +173,18 @@ if (page.includes("photo")) {
         " | Photos | Sri Lanka";
 }
 else if (page.includes("history")) {
-    document.title = baseTitle + " | History";
+    document.title = 
+            (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | History | Sri Lanka";
 }
 else if (page.includes("contact") || page.includes("map")) {
-    document.title = baseTitle + " | Contact";
+    document.title = 
+         (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | Contact | Sri Lanka";
 }
 else {
     document.title = baseTitle;
