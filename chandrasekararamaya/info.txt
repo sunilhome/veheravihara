@@ -1,5 +1,5 @@
 name_si=චන්ද්‍රශේඛරාරාමය, ආනන්ද මෛත්‍රෙය මාවත, මහරගම
-en=Chandrasekararamaya Maharagama
+name_en=Chandrasekararamaya Maharagama
 district_si=කොළඹ
 district_en=Colombo
 
