@@ -4,7 +4,7 @@ district_si=කොළඹ
 district_en=Colombo
 
 address_si=ශ්‍රී ප්‍රඥානන්ද මහ පිරිවෙන, මහරගම 
-telephone=+94
+telephone=+94 112850583
 email=
 
 website=https://veheravihara.lk/
