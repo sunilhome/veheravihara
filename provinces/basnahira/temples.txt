@@ -28,7 +28,7 @@ depanama-siri-damminda-viharaya|දෙපානම සිරි ධම්මි�
 egodawththa-siri-vijayanandanaramaya|එගොඩවත්ත සිරි විජය නන්දනාරාම විහාරය|Egodawththa Siri Vijayanandanaramaya
 maharagama-siri-prgghananda-maha-piriwena|මහරගම ශ්‍රී ප්‍රඥානන්ද මහ පිරිවෙන|Siri Prgghananda Maha Piriwena
 thalapathpitiya-sri-jayabodi-viharaya|තලපත්පිටිය ශ්‍රී ජය බෝධි විහාරය|Thalapathpitiya Sri Jayabodhi Viharaya
-thalapatpitiya-ganelanda-viharaya|තලපත්පිටිය-ගනේලන්ද-විහාරය|Thalapathpitiya Ganelanda Viharaya
+thalapatpitiya-ganelanda-viharaya|තලපත්පිටිය ගනේලන්ද විහාරය|Thalapathpitiya Ganelanda Viharaya
 
 
 
