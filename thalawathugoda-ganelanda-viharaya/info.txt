@@ -1,9 +1,9 @@
-name_si=තලපත්පිටිය ගනේලන්ද විහාරය
-name_en=Thalapathpitiya Ganelanda Viharaya
+name_si=තලවතුගොඩ ගනේලන්ද විහාරය
+name_en=Thalawathugoda Ganelanda Viharaya
 district_si=කොළඹ
 district_en=Colombo
 
-address_si=තලපත්පිටිය ගනේලන්ද විහාරය
+address_si=තලවතුගොඩ ගනේලන්ද විහාරය
 telephone=+94
 email=
 
