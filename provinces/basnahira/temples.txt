@@ -29,7 +29,7 @@ egodawththa-siri-vijayanandanaramaya|එගොඩවත්ත සිරි ව�
 maharagama-siri-prgghananda-maha-piriwena|මහරගම ශ්‍රී ප්‍රඥානන්ද මහ පිරිවෙන|Siri Prgghananda Maha Piriwena
 thalapathpitiya-sri-jayabodi-viharaya|තලපත්පිටිය ශ්‍රී ජය බෝධි විහාරය|Thalapathpitiya Sri Jayabodhi Viharaya
 thalawathugoda-ganelanda-viharaya|තලවතුගොඩ ගනේලන්ද විහාරය|Thalawathugoda Ganelanda Viharaya
-nugegoda-siri-dammarama-maha-viharraya|නුගේගොඩ සිරිධම්මාරාම මහා විහාරය|Siri Dammarama Maha Vihaaya
+nugegoda-siri-dammarama-maha-viharaya|නුගේගොඩ සිරිධම්මාරාම මහා විහාරය|Siri Dammarama Maha Viharaya
 
 
 
