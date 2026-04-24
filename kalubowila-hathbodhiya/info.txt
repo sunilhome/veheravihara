@@ -1,0 +1,21 @@
+name_si=කළුබෝවිල හත්බෝධිය
+name_en=Kalubowila Hathbodhiya
+district_si=කොළඹ
+district_en=Colombo
+
+address_si=හත්බෝධිය විහාරය, කලුබෝවිල, දෙහිවල
+telephone=+94
+email=
+
+website=https://veheravihara.lk/
+image=https://veheravihara.lk/thalapathpitiya-sri-jayabodhi-viharaya/1.webp
+type=temple
+abbot=
+
+description_si=බෞද්ධ විහාරස්ථානයකි. විහාරාධිපති, ඡායාරූප, ඉතිහාසය සහ සිතියම.
+description_en=A Buddhist temple. Incumbent, photos, history and map.
+
+note_si=අති පූජ්‍ය 
+note_en=
+
+map_embed=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.2192638825322!2d79.8695973!3d6.8654113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b8ed632746b%3A0x79e32e04493d799a!2zSGF0aGJvZGhpIFJhamEgTWFoYSBWaWhhcmF5YSAtIEthbHVib3dpbGEgfCDgt4Tgtq3gt4rgtrbgt53gtrDgt5Ig4La74LaiIOC2uOC3hCDgt4Dgt5Lgt4Tgt4_gtrvgtrogLSDgtprgt4Xgt5Tgtrbgt53gt4Dgt5Lgtr0!5e1!3m2!1sen!2slk!4v1777040075973!5m2!1sen!2slk
