@@ -1,0 +1,21 @@
+name_si=තලවතුගොඩ සිරිනන්ද ජෝතිකාරාමය
+name_en=Thalawathugoda Sirinandha Jothikaramaya
+district_si=කොළඹ
+district_en=Colombo
+
+address_si= සිරිනන්ද ජෝතිකාරාමය, තලවතුගොඩ
+telephone=+94
+email=
+
+website=https://veheravihara.lk/
+image=https://veheravihara.lk/thalapathpitiya-sri-jayabodhi-viharaya/1.webp
+type=temple
+abbot=
+
+description_si=බෞද්ධ විහාරස්ථානයකි. විහාරාධිපති, ඡායාරූප, ඉතිහාසය සහ සිතියම.
+description_en=A Buddhist temple. Incumbent, photos, history and map.
+
+note_si=පූජ්‍ය අත්තුඩාවේ විමලතිස්ස හිමිපාණන් 
+note_en=Venarable Aththudave wimalathissa Therro
+
+map_embed=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.7101851284183!2d80.0144577!3d7.22081685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2e3f4a806af7d%3A0x99814a058b349dbd!2sSri%20Jothikaramaya%2C%20Nugegoda!5e1!3m2!1sen!2slk!4v1777047934271!5m2!1sen!2slk
