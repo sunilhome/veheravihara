@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             if (webEl) {
                 if (info.website) {
-                    webEl.innerHTML = `<a href="${info.website}" target="_blank" rel="noopener noreferrer">${info.website}</a>`;
+                   webEl.innerHTML = '<a href="' + info.website + '" target="_blank" rel="noopener noreferrer">' + info.website + '</a>';
                 } else {
                     webEl.textContent = "NO WEBSITE";
                 }
