@@ -136,10 +136,11 @@ window.addEventListener("DOMContentLoaded", () => {
             }
 
             // MAP
-            const mapFrame = document.getElementById("mapFrame");
-            if (mapFrame && info.map_embed) {
-                mapFrame.src = info.map_embed;
-            }
+        const mapFrame = document.getElementById("mapFrame");
+
+if (mapFrame && info.map_embed) {
+    mapFrame.src = info.map_embed;
+}
 
             // TITLE
             let page = window.location.pathname.toLowerCase();
