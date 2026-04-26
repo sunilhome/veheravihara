@@ -1,6 +1,5 @@
-```javascript
 // common.js
-console.log("COMMON.JS LOADED");
+console.log("NEW COMMON.JS LOADED");
 
 let currentAudio = null;
 let currentBtn = null;
@@ -11,7 +10,7 @@ let lang = "si";
 window.addEventListener("DOMContentLoaded", () => {
 
     // ======================
-    // SLIDESHOW (ORIGINAL SAFE)
+    // SLIDESHOW
     // ======================
     const slideImg = document.getElementById("slideImg");
     if (slideImg) {
@@ -27,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ======================
-    // PHOTO GALLERY (ORIGINAL SAFE)
+    // PHOTO GALLERY
     // ======================
     const gallery = document.getElementById("photo-gallery");
     if (gallery) {
@@ -83,23 +82,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
             console.log("INFO LOADED:", info);
 
-            // ABBOT + NOTES
-            const abbotEl = document.getElementById("abbot-info");
-            const noteSIEl = document.getElementById("note-si");
-            const noteENEl = document.getElementById("note-en");
-
-            if (abbotEl) abbotEl.textContent = info.abbot || "";
-            if (noteSIEl) noteSIEl.textContent = info.note_si || "";
-            if (noteENEl) noteENEl.textContent = info.note_en || "";
-
+            // ======================
             // TEMPLE NAME
+            // ======================
+            // ======================
+// ABBOT + NAMES
+// ======================
+const abbotEl = document.getElementById("abbot-info");
+const noteSIEl = document.getElementById("note-si");
+const noteENEl = document.getElementById("note-en");
+
+if (abbotEl) {
+    abbotEl.textContent = info.abbot || "";
+}
+
+if (noteSIEl) {
+    noteSIEl.textContent = info.note_si || "";
+}
+
+if (noteENEl) {
+    noteENEl.textContent = info.note_en || "";
+}
             const siEl = document.getElementById("templeSI");
             const enEl = document.getElementById("templeEN");
 
             if (siEl) siEl.textContent = info.name_si || "NO SI NAME";
             if (enEl) enEl.textContent = info.name_en || "NO EN NAME";
 
-            // CONTACT
+            // ======================
+            // CONTACT PAGE
+            // ======================
             const addressEl = document.getElementById("contact-address");
             const emailEl = document.getElementById("contact-email");
             const telEl = document.getElementById("contact-telephone");
@@ -114,68 +126,93 @@ window.addEventListener("DOMContentLoaded", () => {
                 emailEl.textContent = info.email || "NO EMAIL";
             }
 
-            if (telEl) {
-                if (info.telephone) {
-                    const phone = info.telephone.replace(/\s+/g, "");
-                    telEl.textContent = info.telephone;
-                    telEl.href = "tel:" + phone;
-                    telEl.style.pointerEvents = "auto";
-                } else {
-                    telEl.textContent = "NO PHONE";
-                    telEl.removeAttribute("href");
-                    telEl.style.pointerEvents = "none";
-                }
-            }
+       if (telEl) {
+    if (info.telephone) {
+        const phone = info.telephone.replace(/\s+/g, "");
+        telEl.textContent = info.telephone;
+        telEl.href = "tel:" + phone;
+        telEl.style.pointerEvents = "auto";
+    } else {
+        telEl.textContent = "NO PHONE";
+        telEl.removeAttribute("href");
+        telEl.style.pointerEvents = "none";
+    }
+}
 
             if (webEl) {
                 if (info.website) {
-                   webEl.innerHTML = '<a href="' + info.website + '" target="_blank" rel="noopener noreferrer">' + info.website + '</a>';
+                    webEl.innerHTML = `<a href="${info.website}" target="_blank">${info.website}</a>`;
                 } else {
                     webEl.textContent = "NO WEBSITE";
                 }
             }
 
+            // ======================
             // MAP
-        const mapFrame = document.getElementById("mapFrame");
+            // ======================
+            const mapFrame = document.getElementById("mapFrame");
+            if (mapFrame && info.map_embed) {
+                mapFrame.src = info.map_embed;
+            }
 
-if (mapFrame && info.map_embed) {
-    mapFrame.src = info.map_embed;
+            // ======================
+            // TITLE
+            // ======================
+// ======================
+// TITLE (PAGE BASED)
+// ======================
+let page = window.location.pathname.toLowerCase();
+
+let baseTitle =
+    (info.name_si || "Temple") +
+    " | " +
+    (info.name_en || "") +
+    " | Sri Lanka";
+
+if (page.includes("photo")) {
+    document.title =
+        (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | Photos | Sri Lanka";
+}
+else if (page.includes("history")) {
+    document.title = 
+            (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | History | Sri Lanka";
+}
+else if (page.includes("contact") || page.includes("map")) {
+    document.title = 
+         (info.name_si || "Temple") +
+        " | " +
+        (info.name_en || "") +
+        " | Contact | Sri Lanka";
+}
+else {
+    document.title = baseTitle;
 }
 
-            // TITLE
-            let page = window.location.pathname.toLowerCase();
-
-            let baseTitle =
-                (info.name_si || "Temple") +
-                " | " +
-                (info.name_en || "") +
-                " | Sri Lanka";
-
-            if (page.includes("photo")) {
-                document.title = baseTitle + " | Photos";
-            }
-            else if (page.includes("history")) {
-                document.title = baseTitle + " | History";
-            }
-            else if (page.includes("contact") || page.includes("map")) {
-                document.title = baseTitle + " | Contact";
-            }
-            else {
-                document.title = baseTitle;
-            }
-
-            // META DESCRIPTION
+            // ======================
+            // META DESCRIPTION (SEO)
+            // ======================
             const descEl = document.querySelector('meta[name="description"]');
 
             if (descEl) {
+
                 const desc = (lang === "si")
                     ? ((info.name_si || "") + " - " + (info.district_si || "") + " ප්‍රදේශයේ " + (info.description_si || ""))
                     : ((info.name_en || "") + " - Located in " + (info.district_en || "") + ". " + (info.description_en || ""));
 
+                console.log("META DESC:", desc);
+
                 descEl.content = desc;
             }
 
-            // DEFAULT HISTORY
+            // ======================
+            // DEFAULT HISTORY LOAD
+            // ======================
             if (document.getElementById('temple-text')) {
                 loadInfo('si');
             }
@@ -185,22 +222,11 @@ if (mapFrame && info.map_embed) {
             console.log("❌ INFO LOAD ERROR:", err);
         });
 
-    // ==============================
-    // STATCOUNTER (MERGED)
-    // ==============================
-    window.sc_project = 13209421;
-    window.sc_invisible = 1;
-    window.sc_security = "4f7f8b9c";
-
-    var sc = document.createElement("script");
-    sc.src = "https://www.statcounter.com/counter/counter.js";
-    sc.async = true;
-
-    document.body.appendChild(sc);
-
 });
 
-// AUDIO
+// ======================
+// AUDIO CONTROL
+// ======================
 function toggleAudio(id, btn) {
     const audio = document.getElementById(id);
     if (!audio) return;
@@ -236,7 +262,9 @@ function toggleAudio(id, btn) {
     };
 }
 
-// HISTORY
+// ======================
+// HISTORY LOADER
+// ======================
 async function loadInfo(langParam) {
 
     const file = (langParam === 'si') ? 'info-si.txt' : 'info-en.txt';
@@ -274,4 +302,20 @@ async function loadInfo(langParam) {
         box.textContent = "Information not available.";
     }
 }
-```
+
+// ==============================
+// STATCOUNTER
+// ==============================
+window.addEventListener("DOMContentLoaded", function () {
+
+    window.sc_project = 13209421;
+    window.sc_invisible = 1;
+    window.sc_security = "4f7f8b9c";
+
+    var sc = document.createElement("script");
+    sc.src = "https://www.statcounter.com/counter/counter.js";
+    sc.async = true;
+
+    document.body.appendChild(sc);
+
+});
