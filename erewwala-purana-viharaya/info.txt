@@ -8,7 +8,7 @@ telephone=+94
 email=
 
 website=https://veheravihara.lk/
-image=https://veheravihara.lk/thalapathpitiya-sri-jayabodhi-viharaya/1.webp
+image=https://veheravihara.lk/erewwala-purana-rajamaha-viharaya/1.webp
 type=temple
 abbot=
 
