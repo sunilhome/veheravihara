@@ -1,70 +1,33 @@
 ```javascript
 // common.js
-
 console.log("COMMON.JS LOADED");
 
-// ==============================
-// GLOBAL AUDIO CONTROL
-// ==============================
 let currentAudio = null;
 let currentBtn = null;
 
 // 🌐 Language (default Sinhala)
 let lang = "si";
 
-// ==============================
-// MAIN LOAD
-// ==============================
 window.addEventListener("DOMContentLoaded", () => {
 
     // ======================
-    // GLOBAL IMAGE LAZY LOAD
-    // ======================
-    document.querySelectorAll("img").forEach(img => {
-        img.setAttribute("loading", "lazy");
-    });
-
-    // ======================
-    // SLIDESHOW (SAFE)
+    // SLIDESHOW (ORIGINAL SAFE)
     // ======================
     const slideImg = document.getElementById("slideImg");
     if (slideImg) {
-
         const images = ["a.webp", "b.webp", "c.webp"];
-        let validImages = [];
-        let loaded = 0;
+        let index = 0;
 
-        images.forEach(src => {
-            const img = new Image();
-            img.src = src;
+        images.forEach(src => new Image().src = src);
 
-            img.onload = () => {
-                validImages.push(src);
-                loaded++;
-                if (loaded === images.length) startSlideshow();
-            };
-
-            img.onerror = () => {
-                loaded++;
-                if (loaded === images.length) startSlideshow();
-            };
-        });
-
-        function startSlideshow() {
-            if (validImages.length === 0) return;
-
-            let index = 0;
-            slideImg.src = validImages[0];
-
-            setInterval(() => {
-                index = (index + 1) % validImages.length;
-                slideImg.src = validImages[index];
-            }, 3000);
-        }
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            slideImg.src = images[index];
+        }, 3000);
     }
 
     // ======================
-    // PHOTO GALLERY
+    // PHOTO GALLERY (ORIGINAL SAFE)
     // ======================
     const gallery = document.getElementById("photo-gallery");
     if (gallery) {
@@ -120,9 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             console.log("INFO LOADED:", info);
 
-            // ======================
             // ABBOT + NOTES
-            // ======================
             const abbotEl = document.getElementById("abbot-info");
             const noteSIEl = document.getElementById("note-si");
             const noteENEl = document.getElementById("note-en");
@@ -131,18 +92,14 @@ window.addEventListener("DOMContentLoaded", () => {
             if (noteSIEl) noteSIEl.textContent = info.note_si || "";
             if (noteENEl) noteENEl.textContent = info.note_en || "";
 
-            // ======================
             // TEMPLE NAME
-            // ======================
             const siEl = document.getElementById("templeSI");
             const enEl = document.getElementById("templeEN");
 
             if (siEl) siEl.textContent = info.name_si || "NO SI NAME";
             if (enEl) enEl.textContent = info.name_en || "NO EN NAME";
 
-            // ======================
-            // CONTACT PAGE
-            // ======================
+            // CONTACT
             const addressEl = document.getElementById("contact-address");
             const emailEl = document.getElementById("contact-email");
             const telEl = document.getElementById("contact-telephone");
@@ -154,7 +111,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
 
             if (emailEl) {
-                emailEl.textContent = info.email || "No email available";
+                emailEl.textContent = info.email || "NO EMAIL";
             }
 
             if (telEl) {
@@ -164,7 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     telEl.href = "tel:" + phone;
                     telEl.style.pointerEvents = "auto";
                 } else {
-                    telEl.textContent = "No phone available";
+                    telEl.textContent = "NO PHONE";
                     telEl.removeAttribute("href");
                     telEl.style.pointerEvents = "none";
                 }
@@ -174,21 +131,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (info.website) {
                     webEl.innerHTML = `<a href="${info.website}" target="_blank" rel="noopener noreferrer">${info.website}</a>`;
                 } else {
-                    webEl.textContent = "No website available";
+                    webEl.textContent = "NO WEBSITE";
                 }
             }
 
-            // ======================
             // MAP
-            // ======================
             const mapFrame = document.getElementById("mapFrame");
             if (mapFrame && info.map_embed) {
                 mapFrame.src = info.map_embed;
             }
 
-            // ======================
-            // TITLE (PAGE BASED)
-            // ======================
+            // TITLE
             let page = window.location.pathname.toLowerCase();
 
             let baseTitle =
@@ -210,13 +163,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.title = baseTitle;
             }
 
-            // ======================
-            // META DESCRIPTION (SEO)
-            // ======================
+            // META DESCRIPTION
             const descEl = document.querySelector('meta[name="description"]');
 
             if (descEl) {
-
                 const desc = (lang === "si")
                     ? ((info.name_si || "") + " - " + (info.district_si || "") + " ප්‍රදේශයේ " + (info.description_si || ""))
                     : ((info.name_en || "") + " - Located in " + (info.district_en || "") + ". " + (info.description_en || ""));
@@ -224,9 +174,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 descEl.content = desc;
             }
 
-            // ======================
-            // DEFAULT HISTORY LOAD
-            // ======================
+            // DEFAULT HISTORY
             if (document.getElementById('temple-text')) {
                 loadInfo('si');
             }
@@ -237,7 +185,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
     // ==============================
-    // STATCOUNTER
+    // STATCOUNTER (MERGED)
     // ==============================
     window.sc_project = 13209421;
     window.sc_invisible = 1;
@@ -251,9 +199,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// ======================
-// AUDIO CONTROL
-// ======================
+// AUDIO
 function toggleAudio(id, btn) {
     const audio = document.getElementById(id);
     if (!audio) return;
@@ -289,9 +235,7 @@ function toggleAudio(id, btn) {
     };
 }
 
-// ======================
-// HISTORY LOADER
-// ======================
+// HISTORY
 async function loadInfo(langParam) {
 
     const file = (langParam === 'si') ? 'info-si.txt' : 'info-en.txt';
